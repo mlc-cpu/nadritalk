@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="실내 놀이 공간 이미지">
+  <rect width="800" height="500" fill="#fff1e8"/>
+  <rect x="88" y="92" width="624" height="322" rx="32" fill="#fffdf8" stroke="#ecc7ac" stroke-width="8"/>
+  <rect x="134" y="250" width="170" height="112" rx="18" fill="#89bbb2"/>
+  <rect x="320" y="200" width="170" height="162" rx="18" fill="#f3b47f"/>
+  <rect x="506" y="150" width="160" height="212" rx="18" fill="#f6d37f"/>
+  <circle cx="219" cy="214" r="44" fill="#2f6f68"/>
+  <circle cx="405" cy="164" r="44" fill="#e87532"/>
+  <circle cx="586" cy="114" r="44" fill="#2f6f68"/>
+  <path d="M149 388h502" stroke="#2f6f68" stroke-width="16" stroke-linecap="round"/>
+</svg>

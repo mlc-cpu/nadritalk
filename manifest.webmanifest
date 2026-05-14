@@ -1,0 +1,17 @@
+{
+  "name": "나들이톡",
+  "short_name": "나들이톡",
+  "description": "아이와 갈 곳을 찾고 장소별 톡으로 현장 상황을 확인하는 나들이톡",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f6f3ec",
+  "theme_color": "#2f6f68",
+  "icons": [
+    {
+      "src": "assets/icon.svg?v=20260515az",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

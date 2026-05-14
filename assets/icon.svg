@@ -1,0 +1,37 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="나들이톡 로고">
+  <defs>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#000000" flood-opacity="0.14"/>
+    </filter>
+    <linearGradient id="pinGrad" x1="318" y1="205" x2="585" y2="704" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF8A00"/>
+      <stop offset="1" stop-color="#FF5A1F"/>
+    </linearGradient>
+    <linearGradient id="bubbleGrad" x1="542" y1="318" x2="817" y2="590" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17B657"/>
+      <stop offset="1" stop-color="#06984A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- App icon background -->
+  <rect x="92" y="92" width="840" height="840" rx="190" fill="#FFFFFF"/>
+
+  <!-- Chat bubble -->
+  <g filter="url(#softShadow)">
+    <path d="M650 285C764 285 856 361 856 455C856 549 764 625 650 625C625 625 601 621 579 614L505 659C491 667 474 654 479 638L501 569C465 538 444 497 444 455C444 361 536 285 650 285Z"
+          fill="url(#bubbleGrad)"/>
+    <circle cx="590" cy="455" r="24" fill="white"/>
+    <circle cx="652" cy="455" r="24" fill="white"/>
+    <circle cx="714" cy="455" r="24" fill="white"/>
+  </g>
+
+  <!-- Location pin -->
+  <g filter="url(#softShadow)">
+    <path d="M424 188C298 188 196 290 196 416C196 588 424 810 424 810C424 810 652 588 652 416C652 290 550 188 424 188Z"
+          fill="url(#pinGrad)"/>
+    <circle cx="424" cy="410" r="132" fill="white"/>
+    <ellipse cx="374" cy="394" rx="20" ry="32" fill="#242424"/>
+    <ellipse cx="474" cy="394" rx="20" ry="32" fill="#242424"/>
+    <path d="M361 465C380 496 468 496 487 465" stroke="#242424" stroke-width="24" stroke-linecap="round"/>
+  </g>
+</svg>

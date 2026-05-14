@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="과학 체험관 이미지">
+  <rect width="800" height="500" fill="#e9eef4"/>
+  <rect x="98" y="96" width="604" height="324" rx="28" fill="#fffdf8" stroke="#b5c5d6" stroke-width="8"/>
+  <circle cx="403" cy="250" r="92" fill="#dbe8ef"/>
+  <path d="M262 250c76-66 207-66 282 0M262 250c76 66 207 66 282 0" fill="none" stroke="#2f6f68" stroke-width="14" stroke-linecap="round"/>
+  <path d="M403 110v280M267 160l272 180M539 160L267 340" stroke="#e87532" stroke-width="12" stroke-linecap="round" opacity=".9"/>
+  <circle cx="403" cy="250" r="24" fill="#2f6f68"/>
+  <circle cx="250" cy="154" r="34" fill="#f6d37f"/>
+  <circle cx="552" cy="346" r="34" fill="#89bbb2"/>
+  <rect x="150" y="358" width="500" height="20" rx="10" fill="#cbdfd8"/>
+</svg>

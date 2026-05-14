@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#183c36">
+  <meta name="description" content="아이와 갈 곳을 찾고 장소별 톡으로 현장 상황을 확인하는 나들이톡">
+  <title>나들이톡 | 가족 나들이</title>
+  <link rel="icon" href="./assets/icon.svg?v=20260515az" type="image/svg+xml">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./styles.css?v=20260515az">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">본문으로 건너뛰기</a>
+
+  <header class="site-header" aria-label="나들이톡 상단 메뉴">
+    <button class="brand" type="button" data-nav="home" aria-label="나들이톡 홈으로 이동">
+      <span class="brand-mark" aria-hidden="true">
+        <img class="brand-logo-img" src="./assets/icon.svg?v=20260515az" alt="">
+      </span>
+      <span>
+        <strong>나들이톡</strong>
+        <span>아이와 갈 곳 결정</span>
+      </span>
+    </button>
+
+    <nav class="top-nav" aria-label="주요 메뉴">
+      <button type="button" data-nav="explore">탐색</button>
+      <button type="button" data-nav="favorites">찜목록</button>
+      <button type="button" data-action="go-my" id="headerUserLabel">로그인</button>
+    </nav>
+  </header>
+
+  <main id="main-content" class="app-main" tabindex="-1"></main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="./app.js?v=20260515az" defer></script>
+</body>
+</html>
