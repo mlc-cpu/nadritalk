@@ -5,7 +5,7 @@
   --surface-2: #f0f6f4;
   --surface-3: #fff2e8;
   --ink: #172a25;
-  --muted: #687a73;
+  --muted: #4f625b;
   --line: #dbe6e1;
   --primary: #183c36;
   --primary-2: #2f6f68;
@@ -168,6 +168,10 @@ img {
   background: var(--primary);
 }
 
+.bottom-nav {
+  display: none;
+}
+
 #headerUserLabel {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -217,6 +221,15 @@ img {
   color: var(--primary);
   background: transparent;
   border-color: transparent;
+}
+
+.primary-button:disabled,
+.secondary-button:disabled,
+.ghost-button:disabled,
+.danger-button:disabled {
+  cursor: default;
+  opacity: 0.58;
+  transform: none;
 }
 
 .danger-button {
@@ -546,6 +559,7 @@ a:focus-visible {
 .panel h2,
 .panel h3,
 .place-card h3,
+.review-card h3,
 .detail-title,
 .empty-state h2 {
   margin: 0;
@@ -994,6 +1008,19 @@ a:focus-visible {
   border-top: 1px solid var(--line);
 }
 
+.map-fallback-link {
+  display: block;
+  padding: 10px 12px 0;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.map-fallback-link:hover {
+  text-decoration: underline;
+}
+
 .map-place-chip {
   display: grid;
   gap: 2px;
@@ -1057,7 +1084,7 @@ a:focus-visible {
 
 .action-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 8px;
 }
 
@@ -1181,6 +1208,115 @@ a:focus-visible {
 
 .wide {
   grid-column: 1 / -1;
+}
+
+.review-summary-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.9fr);
+  gap: 16px;
+  align-items: center;
+}
+
+.review-summary-panel h2 {
+  margin: 8px 0 0;
+  color: var(--primary);
+  font-size: 56px;
+  line-height: 1;
+}
+
+.review-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.review-metric-grid div,
+.activity-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+}
+
+.review-metric-grid div {
+  display: grid;
+  justify-items: start;
+}
+
+.review-metric-grid strong {
+  color: var(--primary);
+  font-size: 24px;
+  line-height: 1;
+}
+
+.review-metric-grid span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.review-list {
+  display: grid;
+  gap: 12px;
+}
+
+.review-card {
+  display: grid;
+  gap: 10px;
+}
+
+.review-head {
+  justify-content: space-between;
+}
+
+.review-head > div:first-child,
+.activity-card > div {
+  min-width: 0;
+}
+
+.review-head span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.review-card.hidden-message,
+.chat-message.hidden-message {
+  opacity: 0.62;
+}
+
+.review-photo {
+  width: min(100%, 420px);
+  max-height: 260px;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.content-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.activity-card strong,
+.activity-card .subtle {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}
+
+.activity-card strong {
+  -webkit-line-clamp: 1;
+}
+
+.activity-card .subtle {
+  -webkit-line-clamp: 2;
 }
 
 .check-grid,
@@ -1589,6 +1725,13 @@ a:focus-visible {
   pointer-events: none;
 }
 
+.privacy-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
 .reward-hint {
   margin: 0;
   padding: 10px 12px;
@@ -1737,6 +1880,12 @@ a:focus-visible {
     --gutter: 14px;
   }
 
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
+
   .site-header,
   .app-main {
     width: min(100% - (var(--gutter) * 2), var(--max));
@@ -1745,6 +1894,7 @@ a:focus-visible {
   .site-header {
     gap: 8px;
     padding: 10px 0;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .brand {
@@ -1760,19 +1910,47 @@ a:focus-visible {
   }
 
   .top-nav {
-    width: 100%;
-    overflow-x: auto;
-    border-radius: var(--radius);
-    scrollbar-width: none;
-  }
-
-  .top-nav::-webkit-scrollbar {
     display: none;
   }
 
-  .top-nav > button {
-    min-width: 62px;
-    padding: 0 8px;
+  .bottom-nav {
+    position: fixed;
+    right: var(--gutter);
+    bottom: 12px;
+    left: var(--gutter);
+    z-index: 150;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 4px;
+    padding: 5px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(16px);
+  }
+
+  .bottom-nav > button {
+    min-width: 0;
+    min-height: 44px;
+    border: 0;
+    border-radius: 999px;
+    color: var(--muted);
+    background: transparent;
+    font-weight: 900;
+  }
+
+  .bottom-nav > button[aria-current="page"] {
+    color: #ffffff;
+    background: var(--primary);
+  }
+
+  .app-main {
+    height: calc(100vh - 156px);
+    height: calc(100dvh - 156px);
+    padding-bottom: 24px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
 
   .hero,
@@ -1819,9 +1997,14 @@ a:focus-visible {
   .wide-card,
   .form-grid,
   .chat-form-footer,
+  .review-summary-panel,
   .check-grid,
   .status-grid {
     grid-template-columns: 1fr;
+  }
+
+  .action-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .chat-room {
@@ -1837,7 +2020,7 @@ a:focus-visible {
   }
 
   .chat-tools-row {
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: 1fr;
   }
 
   .chat-message {

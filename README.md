@@ -28,8 +28,8 @@ Google Places, 서울 열린데이터 등 API 키가 필요한 장소 운영/혼
 
 ## 임시 사진 출처
 
-- `assets/place-museum.jpg`: Pexels / Daka
-- `assets/place-playroom.jpg`: Pexels / BI ravencrow
-- `assets/place-park.jpg`: Pixabay / khangptruong
-- `assets/place-science.jpg`: Pixabay / adventurous_blondine
-- `assets/place-art.jpg`: Pixabay / RosieKliskey
+- `assets/place-museum.jpg`, `assets/place-museum.webp`: Pexels / Daka
+- `assets/place-playroom.jpg`, `assets/place-playroom.webp`: Pexels / BI ravencrow
+- `assets/place-park.jpg`, `assets/place-park.webp`: Pixabay / khangptruong
+- `assets/place-science.jpg`, `assets/place-science.webp`: Pixabay / adventurous_blondine
+- `assets/place-art.jpg`, `assets/place-art.webp`: Pixabay / RosieKliskey

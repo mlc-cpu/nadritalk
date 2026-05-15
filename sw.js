@@ -1,16 +1,11 @@
-const CACHE_NAME = "nadritalk-web-v48";
+const CACHE_NAME = "nadritalk-web-v51";
 const APP_SHELL = [
   "./",
   "./index.html",
-  "./styles.css?v=20260515az",
-  "./app.js?v=20260515az",
+  "./styles.css?v=20260516bc",
+  "./app.js?v=20260516bc",
   "./manifest.webmanifest",
-  "./assets/icon.svg?v=20260515az",
-  "./assets/place-museum.jpg",
-  "./assets/place-park.jpg",
-  "./assets/place-science.jpg",
-  "./assets/place-playroom.jpg",
-  "./assets/place-art.jpg"
+  "./assets/icon.svg?v=20260516bc"
 ];
 
 self.addEventListener("install", (event) => {
@@ -22,9 +17,8 @@ self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
       Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key)))
-    )
+    ).then(() => self.clients.claim())
   );
-  self.clients.claim();
 });
 
 self.addEventListener("fetch", (event) => {
@@ -36,6 +30,11 @@ self.addEventListener("fetch", (event) => {
         caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
       }
       return response;
-    }).catch(() => caches.match(event.request))
+    }).catch(async () => {
+      const cached = await caches.match(event.request);
+      if (cached) return cached;
+      if (event.request.mode === "navigate") return caches.match("./index.html");
+      return new Response("", { status: 504, statusText: "Offline" });
+    })
   );
 });

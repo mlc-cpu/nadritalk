@@ -2,7 +2,7 @@
   "use strict";
 
   const STORAGE_KEY = "nadritalk.web.v2";
-  const APP_VERSION = "20260515az";
+  const APP_VERSION = "20260516bc";
   const REALTIME_REFRESH_MS = 15 * 60 * 1000;
   const REALTIME_STALE_MS = 10 * 60 * 1000;
   const OPEN_METEO_FORECAST_URL = "https://api.open-meteo.com/v1/forecast";
@@ -67,7 +67,7 @@
         ]
       },
       interests: ["체험", "미술", "역할놀이"],
-      image: "assets/place-museum.jpg",
+      image: "assets/place-museum.webp",
       imageCredit: "Pexels / Daka",
       rating: 4.7,
       hours: "10:00-18:00, 월요일 휴관",
@@ -110,7 +110,7 @@
         ]
       },
       interests: ["자연", "산책", "자전거"],
-      image: "assets/place-park.jpg",
+      image: "assets/place-park.webp",
       imageCredit: "Pixabay / khangptruong",
       rating: 4.5,
       hours: "상시 개방, 일부 시설 계절 운영",
@@ -154,7 +154,7 @@
         ]
       },
       interests: ["과학", "실험", "로봇"],
-      image: "assets/place-science.jpg",
+      image: "assets/place-science.webp",
       imageCredit: "Pixabay / adventurous_blondine",
       rating: 4.6,
       hours: "09:30-17:30, 월요일 휴관",
@@ -198,7 +198,7 @@
         ]
       },
       interests: ["실내놀이", "역할놀이", "미술"],
-      image: "assets/place-playroom.jpg",
+      image: "assets/place-playroom.webp",
       imageCredit: "Pexels / BI ravencrow",
       rating: 4.4,
       hours: "10:00-19:00, 예약제",
@@ -241,7 +241,7 @@
         ]
       },
       interests: ["체육", "자전거", "야외놀이"],
-      image: "assets/place-park.jpg",
+      image: "assets/place-park.webp",
       imageCredit: "Pixabay / khangptruong",
       rating: 4.2,
       hours: "09:00-18:00, 우천 시 일부 제한",
@@ -284,7 +284,7 @@
         ]
       },
       interests: ["공연", "음악", "역할놀이"],
-      image: "assets/place-art.jpg",
+      image: "assets/place-art.webp",
       imageCredit: "Pixabay / RosieKliskey",
       rating: 4.4,
       hours: "토/일 공연 시간별 운영",
@@ -328,7 +328,7 @@
         ]
       },
       interests: ["체험", "휴식", "실내놀이"],
-      image: "assets/place-playroom.jpg",
+      image: "assets/place-playroom.webp",
       imageCredit: "Pexels / BI ravencrow",
       rating: 4.1,
       hours: "10:00-18:00",
@@ -372,7 +372,7 @@
         ]
       },
       interests: ["미술", "관찰", "역할놀이"],
-      image: "assets/place-art.jpg",
+      image: "assets/place-art.webp",
       imageCredit: "Pixabay / RosieKliskey",
       rating: 4.3,
       hours: "10:30-18:00",
@@ -550,6 +550,7 @@
     creatorRewardLog: [],
     rewardPoints: 0,
     rewardLog: [],
+    reports: [],
     realtime: {
       weatherByPlaceId: {},
       updatedAt: "",
@@ -598,7 +599,7 @@
         children: Array.isArray(parsed.children) ? parsed.children : [],
         savedPlaceIds: Array.isArray(parsed.savedPlaceIds) ? parsed.savedPlaceIds : [],
         extraPlaces: Array.isArray(parsed.extraPlaces) ? parsed.extraPlaces : [],
-        reviews: Array.isArray(parsed.reviews) ? parsed.reviews : seedReviews,
+        reviews: normalizeReviews(Array.isArray(parsed.reviews) ? parsed.reviews : seedReviews),
         messages: normalizeMessages(Array.isArray(parsed.messages) ? parsed.messages : seedMessages),
         likedMessageIds: Array.isArray(parsed.likedMessageIds) ? parsed.likedMessageIds : [],
         rewardedLikeIds: Array.isArray(parsed.rewardedLikeIds) ? parsed.rewardedLikeIds : [],
@@ -606,6 +607,7 @@
         creatorRewardLog: Array.isArray(parsed.creatorRewardLog) ? parsed.creatorRewardLog : [],
         rewardPoints: Number.isFinite(Number(parsed.rewardPoints)) ? Number(parsed.rewardPoints) : 0,
         rewardLog: Array.isArray(parsed.rewardLog) ? parsed.rewardLog : [],
+        reports: normalizeReports(Array.isArray(parsed.reports) ? parsed.reports : []),
         realtime: normalizeRealtime(parsed.realtime)
       };
     } catch (error) {
@@ -617,7 +619,25 @@
   function normalizeMessages(messages) {
     return messages.map((message) => ({
       ...message,
+      hidden: Boolean(message.hidden),
       likes: Number.isFinite(Number(message.likes)) ? Number(message.likes) : seedMessageLikes.get(message.id) || 0
+    }));
+  }
+
+  function normalizeReviews(reviews) {
+    return reviews.map((review) => ({
+      ...review,
+      checklist: Array.isArray(review.checklist) ? review.checklist : [],
+      hidden: Boolean(review.hidden),
+      photoUrl: review.photoUrl || ""
+    }));
+  }
+
+  function normalizeReports(reports) {
+    return reports.map((report) => ({
+      ...report,
+      status: report.status || "open",
+      reason: report.reason || "사용자 신고"
     }));
   }
 
@@ -635,7 +655,14 @@
   }
 
   function saveState() {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      return true;
+    } catch (error) {
+      console.warn("Saved state could not be persisted.", error);
+      showToast("브라우저 저장 공간이 부족합니다. 큰 사진을 줄인 뒤 다시 시도하세요.");
+      return false;
+    }
   }
 
   function places() {
@@ -708,13 +735,14 @@
       saveState();
       render();
     } catch (error) {
-      console.warn("Realtime update failed.", error);
+      console.info("Realtime update failed.", error);
       state.realtime = {
         ...normalizeRealtime(state.realtime),
         status: "error",
         error: "실시간 날씨 업데이트 실패"
       };
       saveState();
+      render();
     }
   }
 
@@ -1220,9 +1248,27 @@
     return reasons.slice(0, 3);
   }
 
-  function placeReviews(placeId) {
+  function placeReviews(placeId, includeHidden = false) {
     return state.reviews
-      .filter((review) => review.placeId === placeId)
+      .filter((review) => review.placeId === placeId && (includeHidden || !review.hidden))
+      .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+  }
+
+  function reviewCountFor(place) {
+    return placeReviews(place.id).length;
+  }
+
+  function currentUserReviews() {
+    if (!state.user) return [];
+    return state.reviews
+      .filter((review) => review.author === state.user.nickname)
+      .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+  }
+
+  function currentUserMessages() {
+    if (!state.user) return [];
+    return state.messages
+      .filter((message) => message.author === state.user.nickname)
       .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
   }
 
@@ -1247,6 +1293,30 @@
       .filter((message) => message.likeCount > 0)
       .sort((a, b) => b.likeCount - a.likeCount || aiHighlightScore(b) - aiHighlightScore(a))
       .slice(0, limit);
+  }
+
+  function contentForReport(type, targetId) {
+    if (type === "message") return state.messages.find((message) => message.id === targetId) || null;
+    if (type === "review") return state.reviews.find((review) => review.id === targetId) || null;
+    return null;
+  }
+
+  function isContentHidden(type, targetId) {
+    return Boolean(contentForReport(type, targetId)?.hidden);
+  }
+
+  function reportTypeLabel(type) {
+    return type === "review" ? "후기" : "톡";
+  }
+
+  function reportStatusLabel(status) {
+    if (status === "hidden") return "숨김 처리";
+    if (status === "restored") return "복구 처리";
+    return "검토 대기";
+  }
+
+  function reportObjectLabel(type) {
+    return type === "review" ? "후기를" : "톡을";
   }
 
   function isTodayMessage(value) {
@@ -1552,10 +1622,12 @@
 
   function render() {
     headerUserLabel.textContent = state.user ? state.user.nickname : "로그인";
-    headerUserLabel.toggleAttribute("aria-current", ui.view === "my");
+    if (ui.view === "my") headerUserLabel.setAttribute("aria-current", "page");
+    else headerUserLabel.removeAttribute("aria-current");
     document.querySelectorAll("[data-nav]").forEach((button) => {
       const current = button.dataset.nav === ui.view || (ui.view === "detail" && button.dataset.nav === "explore");
-      button.toggleAttribute("aria-current", current);
+      if (current) button.setAttribute("aria-current", "page");
+      else button.removeAttribute("aria-current");
     });
 
     const renderers = {
@@ -1595,7 +1667,7 @@
     return `
       <div class="view">
         <section class="hero" aria-labelledby="home-title">
-          <img src="${heroPlace.image}" alt="${escapeHtml(heroPlace.name)} 대표 사진">
+          <img src="${heroPlace.image}" alt="${escapeHtml(heroPlace.name)} 대표 사진" decoding="async" fetchpriority="high">
           <div class="hero-content">
             <div>
               <h1 id="home-title">이번 주말 어디 갈까?</h1>
@@ -1727,7 +1799,7 @@
       <article class="place-card ${wide ? "wide-card" : ""}">
         <div class="place-image">
           <button class="place-image-button" type="button" data-open-place="${place.id}" aria-label="${escapeHtml(place.name)} 상세 보기">
-            <img src="${place.image}" alt="${escapeHtml(place.name)} 사진">
+            <img src="${place.image}" alt="${escapeHtml(place.name)} 사진" loading="lazy" decoding="async">
           </button>
           ${renderFavoriteHeart(place, "place-favorite")}
         </div>
@@ -1751,6 +1823,7 @@
           ${renderAgeGuidance(place, true)}
           <div class="meta-row">
             <strong>평점 ${ratingFor(place)}</strong>
+            <span>후기 ${reviewCountFor(place)}</span>
             <span>톡 ${place.talkActive}</span>
             <span>찜 ${favoriteCountFor(place)}</span>
           </div>
@@ -1792,7 +1865,7 @@
 
   function renderExplore() {
     const results = filteredPlaces();
-    const selected = getPlace(ui.selectedPlaceId);
+    const selected = results.find((place) => place.id === ui.selectedPlaceId) || results[0] || getPlace(ui.selectedPlaceId);
     return `
       <div class="view">
         <section class="explore-layout">
@@ -1803,7 +1876,7 @@
             ${results.length ? results.map((place) => renderPlaceCard(place, true)).join("") : renderEmpty("조건에 맞는 장소가 없습니다.", "검색어를 줄이거나 필터를 초기화하세요.", "필터 초기화", "reset-filters")}
           </div>
           <aside class="side-stack sticky">
-            ${renderGoogleMapPanel(selected)}
+            ${renderGoogleMapPanel(selected, results.length ? results : places())}
             <section class="panel">
               <h3>${escapeHtml(selected.name)}</h3>
               <p class="subtle">${escapeHtml(selected.region)} · ${selected.distanceKm.toFixed(1)}km · ${escapeHtml(selected.crowd)}</p>
@@ -1815,7 +1888,7 @@
     `;
   }
 
-  function renderGoogleMapPanel(selected) {
+  function renderGoogleMapPanel(selected, candidates = places()) {
     return `
       <section class="panel map-panel google-map-panel" aria-label="Google 지도">
         <iframe
@@ -1825,8 +1898,11 @@
           referrerpolicy="no-referrer-when-downgrade"
           allowfullscreen>
         </iframe>
+        <a class="map-fallback-link" href="${googleDirectionsUrl(selected)}" target="_blank" rel="noopener">
+          지도가 보이지 않으면 Google 지도에서 ${escapeHtml(selected.name)} 길찾기 열기
+        </a>
         <div class="map-place-strip" aria-label="지도 장소 선택">
-          ${places().map((place) => `
+          ${candidates.map((place) => `
             <button class="map-place-chip ${place.id === selected.id ? "active" : ""}" type="button" data-action="select-marker" data-place-id="${place.id}">
               <span>${escapeHtml(place.name)}</span>
               <small>${escapeHtml(place.region)}</small>
@@ -1849,13 +1925,13 @@
 
   function renderDetail() {
     const place = getPlace(ui.selectedPlaceId);
-    const messages = placeMessages(place.id, true);
-    if (!["info", "chat"].includes(ui.detailTab)) ui.detailTab = "chat";
+    const messages = placeMessages(place.id, state.user?.role === "admin");
+    if (!["info", "reviews", "chat"].includes(ui.detailTab)) ui.detailTab = "info";
     return `
       <div class="view">
         <section class="detail-hero" aria-labelledby="detail-title">
           <div class="detail-hero-media">
-            <img src="${place.image}" alt="${escapeHtml(place.name)} 사진">
+            <img src="${place.image}" alt="${escapeHtml(place.name)} 사진" decoding="async" fetchpriority="high">
             ${renderFavoriteHeart(place, "detail-favorite")}
           </div>
           <div class="detail-copy">
@@ -1874,12 +1950,14 @@
               <button class="primary-button compact" type="button" data-action="route" data-place-id="${place.id}">길찾기</button>
               <button class="secondary-button compact" type="button" data-action="share" data-place-id="${place.id}">공유</button>
               <button class="secondary-button compact detail-mode-button" type="button" data-action="detail-tab" data-tab="info" aria-pressed="${ui.detailTab === "info"}">정보</button>
+              <button class="secondary-button compact detail-mode-button" type="button" data-action="detail-tab" data-tab="reviews" aria-pressed="${ui.detailTab === "reviews"}">후기</button>
               <button class="secondary-button compact detail-mode-button" type="button" data-action="detail-tab" data-tab="chat" aria-pressed="${ui.detailTab === "chat"}">톡</button>
             </div>
           </div>
         </section>
 
         ${ui.detailTab === "info" ? renderInfoTab(place) : ""}
+        ${ui.detailTab === "reviews" ? renderReviewTab(place) : ""}
         ${ui.detailTab === "chat" ? renderChatTab(place, messages) : ""}
       </div>
     `;
@@ -1925,6 +2003,133 @@
           ${renderGoogleMapPanel(place)}
         </aside>
       </section>
+    `;
+  }
+
+  function renderReviewTab(place) {
+    const reviews = placeReviews(place.id, state.user?.role === "admin");
+    const visibleReviews = reviews.filter((review) => !review.hidden);
+    const average = visibleReviews.length
+      ? (visibleReviews.reduce((sum, review) => sum + Number(review.rating || 0), 0) / visibleReviews.length).toFixed(1)
+      : ratingFor(place);
+    const verifiedCount = visibleReviews.filter((review) => review.verified).length;
+
+    return `
+      <section class="dashboard-grid review-layout">
+        <div class="info-main-stack">
+          <section class="panel review-summary-panel" aria-label="후기 요약">
+            <div>
+              <span class="status-badge">후기 ${visibleReviews.length}</span>
+              <h2>${average}</h2>
+              <p class="subtle">인증 후기 ${verifiedCount}개 · 최신 방문 경험 우선</p>
+            </div>
+            <div class="review-metric-grid">
+              <div><strong>${verifiedCount}</strong><span>인증</span></div>
+              <div><strong>${visibleReviews.filter((review) => review.photoUrl).length}</strong><span>사진</span></div>
+              <div><strong>${place.talkActive}</strong><span>톡 활성도</span></div>
+            </div>
+          </section>
+          <section class="review-list" aria-label="${escapeHtml(place.name)} 후기 목록">
+            ${reviews.length ? reviews.map(renderReviewCard).join("") : renderEmpty("아직 후기가 없습니다.", "방문 경험을 남기면 다음 가족이 더 빠르게 결정할 수 있어요.", "", "")}
+          </section>
+        </div>
+        <aside class="panel sticky">
+          <h3>후기 작성</h3>
+          ${state.user ? renderReviewForm(place) : loginNudge("후기 작성")}
+        </aside>
+      </section>
+    `;
+  }
+
+  function renderReviewForm(place) {
+    const childAge = getChildAge(primaryChild());
+    return `
+      <form class="compact-list" data-form="review" data-place-id="${place.id}">
+        <div class="field">
+          <label for="reviewRating">평점</label>
+          <select id="reviewRating" name="rating" required>
+            ${[5, 4, 3, 2, 1].map((rating) => option(String(rating), `${rating}점`, "5")).join("")}
+          </select>
+        </div>
+        <div class="field">
+          <label for="reviewChildAge">아이 연령</label>
+          <input id="reviewChildAge" name="childAge" value="${childAge !== null ? `${childAge}세` : ""}" placeholder="예: 5세" required>
+        </div>
+        <div class="field">
+          <label for="reviewSummary">한줄평</label>
+          <input id="reviewSummary" name="summary" maxlength="60" placeholder="방문 결정을 도와줄 한 문장" required>
+        </div>
+        <div class="field">
+          <label for="reviewBody">상세 후기</label>
+          <textarea id="reviewBody" name="body" maxlength="420" placeholder="주차, 대기, 아이 반응, 다시 갈지 등을 적어주세요." required></textarea>
+        </div>
+        <fieldset class="field">
+          <legend>체크리스트</legend>
+          <div class="check-grid">
+            ${["주차 좋음", "대기 짧음", "청결 좋음", "아이 만족 높음", "유모차 가능", "식사 편함"].map((label) => `
+              <label class="check-option"><input type="checkbox" name="checklist" value="${escapeHtml(label)}"><span>${escapeHtml(label)}</span></label>
+            `).join("")}
+          </div>
+        </fieldset>
+        <label class="photo-upload">
+          <input type="file" name="photo" accept="image/*">
+          <span>후기 사진 선택</span>
+        </label>
+        <label class="check-option">
+          <input type="checkbox" name="verified">
+          <span>최근 방문 후기입니다</span>
+        </label>
+        <button class="primary-button" type="submit">후기 등록</button>
+      </form>
+    `;
+  }
+
+  function renderReviewCard(review) {
+    const place = getPlace(review.placeId);
+    const isMine = state.user && review.author === state.user.nickname;
+    return `
+      <article class="review-card ${review.hidden ? "hidden-message" : ""}">
+        <div class="review-head">
+          <div>
+            <strong>${escapeHtml(review.author)}</strong>
+            <span>${compactDate(review.createdAt)}</span>
+          </div>
+          <div class="tag-row">
+            <span class="status-badge">평점 ${Number(review.rating || 0).toFixed(1)}</span>
+            <span class="tag">${escapeHtml(review.childAge || "연령 미입력")}</span>
+            ${review.verified ? `<span class="tag">방문 인증</span>` : ""}
+            ${review.hidden ? `<span class="badge">운영자 숨김</span>` : ""}
+          </div>
+        </div>
+        <h3>${escapeHtml(review.summary || "방문 후기")}</h3>
+        <p>${escapeHtml(review.body || "")}</p>
+        ${review.photoUrl ? `<img class="review-photo" src="${review.photoUrl}" alt="${escapeHtml(review.author)}님이 올린 후기 사진" loading="lazy" decoding="async">` : ""}
+        ${review.checklist?.length ? `<div class="tag-row">${review.checklist.map((item) => `<span class="tag">${escapeHtml(item)}</span>`).join("")}</div>` : ""}
+        ${place ? `<p class="subtle">${escapeHtml(place.name)}</p>` : ""}
+        ${renderContentActions("review", review.id, isMine)}
+      </article>
+    `;
+  }
+
+  function renderContentActions(type, targetId, isMine = false) {
+    const hidden = isContentHidden(type, targetId);
+    if (state.user?.role === "admin") {
+      return `
+        <div class="content-actions">
+          <button class="${hidden ? "secondary-button" : "danger-button"} compact" type="button" data-action="${hidden ? "restore-content" : "hide-content"}" data-report-type="${type}" data-target-id="${targetId}">
+            ${hidden ? "복구" : "숨김"}
+          </button>
+        </div>
+      `;
+    }
+    if (!state.user || isMine || hidden) return "";
+    const reported = state.reports.some((report) => report.type === type && report.targetId === targetId && report.reporter === state.user.nickname && report.status === "open");
+    return `
+      <div class="content-actions">
+        <button class="ghost-button compact" type="button" data-action="report-content" data-report-type="${type}" data-target-id="${targetId}" ${reported ? "disabled" : ""}>
+          ${reported ? "신고 접수됨" : "신고"}
+        </button>
+      </div>
     `;
   }
 
@@ -1994,7 +2199,8 @@
             </button>
           </div>
           <p>${escapeHtml(message.text)}</p>
-          ${message.photoUrl ? `<img class="chat-photo" src="${message.photoUrl}" alt="${escapeHtml(message.author)}님이 올린 현장 사진">` : ""}
+          ${message.photoUrl ? `<img class="chat-photo" src="${message.photoUrl}" alt="${escapeHtml(message.author)}님이 올린 현장 사진" loading="lazy" decoding="async">` : ""}
+          ${renderContentActions("message", message.id, isMine)}
         </div>
       </article>
     `;
@@ -2022,6 +2228,7 @@
             <span>현장 사진</span>
           </label>
         </div>
+        <p class="privacy-note">사진 위치정보는 동의한 경우에만 현장 인증에 사용됩니다.</p>
       </form>
     `;
   }
@@ -2076,6 +2283,48 @@
     `;
   }
 
+  function renderMyReviewActivity() {
+    const reviews = currentUserReviews().slice(0, 4);
+    return `
+      <article class="panel compact-list">
+        <h3>내가 쓴 후기</h3>
+        ${reviews.length ? reviews.map((review) => {
+          const place = getPlace(review.placeId);
+          return `
+            <div class="activity-card">
+              <div>
+                <strong>${escapeHtml(review.summary || "방문 후기")}</strong>
+                <p class="subtle">${escapeHtml(place?.name || "삭제된 장소")} · 평점 ${Number(review.rating || 0).toFixed(1)}</p>
+              </div>
+              <button class="ghost-button compact" type="button" data-open-place="${review.placeId}" data-tab-target="reviews">보기</button>
+            </div>
+          `;
+        }).join("") : `<p class="subtle">아직 작성한 후기가 없습니다.</p>`}
+      </article>
+    `;
+  }
+
+  function renderMyTalkActivity() {
+    const messages = currentUserMessages().slice(0, 4);
+    return `
+      <article class="panel compact-list">
+        <h3>내가 참여한 톡</h3>
+        ${messages.length ? messages.map((message) => {
+          const place = getPlace(message.placeId);
+          return `
+            <div class="activity-card">
+              <div>
+                <strong>${escapeHtml(place?.name || "삭제된 장소")}</strong>
+                <p class="subtle">${escapeHtml(message.text)}</p>
+              </div>
+              <button class="ghost-button compact" type="button" data-open-place="${message.placeId}" data-tab-target="chat">톡 보기</button>
+            </div>
+          `;
+        }).join("") : `<p class="subtle">아직 참여한 톡이 없습니다.</p>`}
+      </article>
+    `;
+  }
+
   function renderMy() {
     if (!state.user) {
       return `
@@ -2088,6 +2337,8 @@
             <div class="field"><label for="loginRegion">기본 지역</label><input id="loginRegion" name="region" value="서울 마포" required></div>
             <div class="field"><label for="loginChildBirthMonth">어린이 생년월</label><input id="loginChildBirthMonth" name="childBirthMonth" type="month" value="2020-05" required></div>
             <div class="field"><label for="loginRole">역할</label><select id="loginRole" name="role">${option("user", "일반 사용자", "user")}${option("admin", "운영자 포함", "user")}</select></div>
+            <label class="check-option wide"><input type="checkbox" name="termsConsent" required><span>서비스 이용약관과 개인정보 처리에 동의합니다.</span></label>
+            <label class="check-option wide"><input type="checkbox" name="locationConsent"><span>현장 인증을 위한 사진 위치정보 사용에 동의합니다.</span></label>
             <button class="primary-button wide" type="submit">로그인</button>
           </form>
         </section>
@@ -2122,6 +2373,8 @@
               `).join("") : ""}
             </div>
           </article>
+          ${renderMyReviewActivity()}
+          ${renderMyTalkActivity()}
           ${state.user.role === "admin" ? `<article class="panel"><h3>운영자 도구</h3><p class="subtle">장소 등록과 좋아요가 많은 톡을 확인할 수 있습니다.</p><button class="primary-button" type="button" data-nav="admin">운영자 화면 열기</button></article>` : ""}
         </div>
         <aside class="panel sticky">
@@ -2144,16 +2397,21 @@
     }
 
     const likedMessages = topLikedMessages();
+    const reports = [...state.reports].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     return `
       <section class="dashboard-grid">
         <div class="side-stack">
           <article class="panel">
             <h2>운영자 콘솔</h2>
-            <p class="subtle">장소 등록과 좋아요가 많은 톡을 확인합니다.</p>
+            <p class="subtle">장소 등록, 신고 처리, 좋아요가 많은 톡을 확인합니다.</p>
           </article>
           <article class="panel compact-list">
             <h3>등록 장소</h3>
             ${places().map((place) => `<div class="admin-card"><div class="admin-head"><strong>${escapeHtml(place.name)}</strong><button class="ghost-button compact" type="button" data-open-place="${place.id}">보기</button></div><p class="subtle">${escapeHtml(place.category)} · ${escapeHtml(place.address)}</p></div>`).join("")}
+          </article>
+          <article class="panel compact-list">
+            <h3>신고 관리</h3>
+            ${reports.length ? reports.map(renderReportCard).join("") : `<p class="subtle">접수된 신고가 없습니다.</p>`}
           </article>
           <article class="panel compact-list">
             <h3>좋아요 많은 톡</h3>
@@ -2176,6 +2434,35 @@
           </form>
         </aside>
       </section>
+    `;
+  }
+
+  function renderReportCard(report) {
+    const target = contentForReport(report.type, report.targetId);
+    const place = getPlace(report.placeId);
+    const hidden = Boolean(target?.hidden);
+    const contentText = report.type === "review"
+      ? `${target?.summary || "후기"} ${target?.body || ""}`.trim()
+      : target?.text || "삭제된 톡";
+    return `
+      <div class="admin-card report-card">
+        <div class="admin-head">
+          <div>
+            <strong>${reportTypeLabel(report.type)} 신고</strong>
+            <p class="subtle">${escapeHtml(place?.name || "장소 없음")} · 신고자 ${escapeHtml(report.reporter || "익명")}</p>
+          </div>
+          <span class="status-badge">${reportStatusLabel(report.status)}</span>
+        </div>
+        <p>${escapeHtml(contentText || "콘텐츠를 찾지 못했습니다.")}</p>
+        <div class="content-actions">
+          ${target ? `
+            <button class="${hidden ? "secondary-button" : "danger-button"} compact" type="button" data-action="${hidden ? "restore-content" : "hide-content"}" data-report-type="${report.type}" data-target-id="${report.targetId}">
+              ${hidden ? "복구" : "숨김 처리"}
+            </button>
+          ` : ""}
+          ${target ? `<button class="ghost-button compact" type="button" data-open-place="${report.placeId}" data-tab-target="${report.type === "review" ? "reviews" : "chat"}">원문 보기</button>` : ""}
+        </div>
+      </div>
     `;
   }
 
@@ -2256,6 +2543,14 @@
       ui.detailTab = button.dataset.tab;
       render();
     }
+    if (action === "report-content") {
+      reportContent(button.dataset.reportType, button.dataset.targetId);
+      return;
+    }
+    if (action === "hide-content" || action === "restore-content") {
+      setContentHidden(button.dataset.reportType, button.dataset.targetId, action === "hide-content");
+      return;
+    }
     if (action === "toggle-save") {
       if (!requireUser("찜")) return;
       toggleSave(button.dataset.placeId);
@@ -2326,7 +2621,12 @@
         email: String(formData.get("email") || "").trim(),
         nickname: String(formData.get("nickname") || "").trim(),
         region: String(formData.get("region") || "").trim(),
-        role: String(formData.get("role") || "user")
+        role: String(formData.get("role") || "user"),
+        consentFlags: {
+          terms: formData.get("termsConsent") === "on",
+          privacy: formData.get("termsConsent") === "on",
+          location: formData.get("locationConsent") === "on"
+        }
       };
       if (childBirthMonth) {
         state.children = state.children.map((child) => ({ ...child, isPrimary: false }));
@@ -2365,6 +2665,40 @@
       render();
     }
 
+    if (formType === "review") {
+      if (!requireUser("후기 작성")) return;
+      const photo = formData.get("photo");
+      const hasPhoto = photo instanceof File && photo.size > 0;
+      let photoUrl = "";
+      if (hasPhoto) {
+        try {
+          photoUrl = await fileToDataUrl(photo);
+        } catch (error) {
+          console.warn("Review photo could not be loaded.", error);
+          showToast("후기 사진을 불러오지 못했습니다.");
+          return;
+        }
+      }
+      state.reviews.push({
+        id: uid("review"),
+        placeId: form.dataset.placeId,
+        author: state.user.nickname,
+        rating: Number(formData.get("rating") || 5),
+        childAge: String(formData.get("childAge") || "").trim(),
+        summary: String(formData.get("summary") || "").trim(),
+        body: String(formData.get("body") || "").trim(),
+        checklist: formData.getAll("checklist").map(String).filter(Boolean),
+        verified: formData.get("verified") === "on" || hasPhoto,
+        photoUrl,
+        hidden: false,
+        createdAt: new Date().toISOString()
+      });
+      ui.detailTab = "reviews";
+      saveState();
+      showToast("후기를 등록했습니다.");
+      render();
+    }
+
     if (formType === "chat") {
       if (!requireUser("톡 작성")) return;
       const status = String(formData.get("status") || "going");
@@ -2381,7 +2715,9 @@
       if (hasPhoto) {
         try {
           photoUrl = await fileToDataUrl(photo);
-          photoGps = await readPhotoGps(photo);
+          if (state.user?.consentFlags?.location) {
+            photoGps = await readPhotoGps(photo);
+          }
         } catch (error) {
           console.warn("Photo could not be loaded.", error);
           showToast("사진을 불러오지 못했습니다.");
@@ -2436,7 +2772,7 @@
         ageMin,
         ageMax,
         interests: ["체험"],
-        image: "assets/place-museum.jpg",
+        image: "assets/place-museum.webp",
         imageCredit: "임시 이미지",
         rating: 4.2,
         hours: "운영 시간 확인 필요",
@@ -2505,6 +2841,57 @@
       showToast(reward ? `${message.author}님에게 +${reward}P 리워드가 지급되었습니다.` : "좋아요를 반영했습니다.");
     }
     saveState();
+    render();
+  }
+
+  function reportContent(type, targetId) {
+    if (!requireUser(`${reportTypeLabel(type)} 신고`)) return;
+    const target = contentForReport(type, targetId);
+    if (!target || target.hidden) {
+      showToast("신고할 콘텐츠를 찾지 못했습니다.");
+      return;
+    }
+    const isMine = target.author === state.user.nickname;
+    if (isMine) {
+      showToast("내가 작성한 콘텐츠는 신고할 수 없습니다.");
+      return;
+    }
+    const duplicate = state.reports.some((report) => report.type === type && report.targetId === targetId && report.reporter === state.user.nickname && report.status === "open");
+    if (duplicate) {
+      showToast("이미 신고가 접수되었습니다.");
+      return;
+    }
+    state.reports.push({
+      id: uid("report"),
+      type,
+      targetId,
+      placeId: target.placeId,
+      reporter: state.user.nickname,
+      reason: "사용자 신고",
+      status: "open",
+      createdAt: new Date().toISOString()
+    });
+    saveState();
+    showToast(`${reportTypeLabel(type)} 신고가 접수되었습니다.`);
+    render();
+  }
+
+  function setContentHidden(type, targetId, hidden) {
+    if (state.user?.role !== "admin") {
+      showToast("운영자 권한이 필요합니다.");
+      return;
+    }
+    const target = contentForReport(type, targetId);
+    if (!target) {
+      showToast("처리할 콘텐츠를 찾지 못했습니다.");
+      return;
+    }
+    target.hidden = hidden;
+    state.reports = state.reports.map((report) => report.type === type && report.targetId === targetId
+      ? { ...report, status: hidden ? "hidden" : "restored", resolvedAt: new Date().toISOString(), resolvedBy: state.user.nickname }
+      : report);
+    saveState();
+    showToast(`${reportObjectLabel(type)} ${hidden ? "숨김 처리" : "복구"}했습니다.`);
     render();
   }
 
