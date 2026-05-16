@@ -2,15 +2,21 @@
   "use strict";
 
   const STORAGE_KEY = "nadritalk.web.v2";
-  const APP_VERSION = "20260517aa";
+  const APP_VERSION = "20260517ag";
   const GENERATED_PLACE_DATA_URL = `./data/places.generated.json?v=${APP_VERSION}`;
   const REALTIME_REFRESH_MS = 15 * 60 * 1000;
   const REALTIME_STALE_MS = 10 * 60 * 1000;
   const OPEN_METEO_FORECAST_URL = "https://api.open-meteo.com/v1/forecast";
+  const STATUS_ORDER = ["going", "onsite", "visited"];
   const STATUS_LABELS = {
-    onsite: "현지에 있어요",
     going: "가는 중이에요",
+    onsite: "현지에 있어요",
     visited: "다녀왔어요"
+  };
+  const STATUS_COUNT_LABELS = {
+    going: "가는 중",
+    onsite: "현지",
+    visited: "다녀옴"
   };
   const REWARD_POINTS = {
     chat: 10,
@@ -661,6 +667,23 @@
     };
   }
 
+  function storedMessagesSnapshot() {
+    try {
+      const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+      return normalizeMessages(Array.isArray(stored.messages) ? stored.messages : []);
+    } catch (error) {
+      console.warn("Saved messages could not be read.", error);
+      return [];
+    }
+  }
+
+  function currentMessagesSnapshot() {
+    const byId = new Map();
+    storedMessagesSnapshot().forEach((message) => byId.set(message.id, message));
+    normalizeMessages(Array.isArray(state.messages) ? state.messages : []).forEach((message) => byId.set(message.id, message));
+    return [...byId.values()];
+  }
+
   function saveState() {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
@@ -850,6 +873,21 @@
     const date = new Date(value);
     if (Number.isNaN(date.getTime())) return "";
     return new Intl.DateTimeFormat("ko-KR", { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" }).format(date);
+  }
+
+  function koreaDateKey(value = new Date()) {
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return "";
+    const parts = new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Asia/Seoul",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit"
+    }).formatToParts(date).reduce((acc, part) => {
+      if (part.type !== "literal") acc[part.type] = part.value;
+      return acc;
+    }, {});
+    return `${parts.year}-${parts.month}-${parts.day}`;
   }
 
   function showToast(message) {
@@ -1161,7 +1199,7 @@
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  function openPlace(placeId, tab = "chat") {
+  function openPlace(placeId, tab = "info") {
     ui.selectedPlaceId = placeId;
     ui.detailTab = tab;
     setView("detail");
@@ -1377,9 +1415,86 @@
   }
 
   function placeMessages(placeId, includeHidden = false) {
-    return state.messages
+    return currentMessagesSnapshot()
       .filter((message) => message.placeId === placeId && (includeHidden || !message.hidden))
       .sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+  }
+
+  function messageUserKey(message) {
+    return String(message?.authorId || message?.author || "").trim();
+  }
+
+  function currentUserKey() {
+    return String(state.user?.email || state.user?.nickname || "").trim();
+  }
+
+  function isStatusMessage(message) {
+    return STATUS_ORDER.includes(message?.status);
+  }
+
+  function isTodayMessage(message) {
+    return koreaDateKey(message?.createdAt) === koreaDateKey();
+  }
+
+  function latestDailyStatusMessages(messages) {
+    const latestByUser = new Map();
+    messages
+      .filter((message) => !message.hidden && isStatusMessage(message) && isTodayMessage(message))
+      .forEach((message) => {
+        const key = messageUserKey(message) || String(message.author || "").trim();
+        if (!key) return;
+        const previous = latestByUser.get(key);
+        if (!previous || new Date(message.createdAt) >= new Date(previous.createdAt)) {
+          latestByUser.set(key, message);
+        }
+      });
+    return [...latestByUser.values()];
+  }
+
+  function dailyStatusMessages(placeId, includeHidden = false) {
+    return latestDailyStatusMessages(placeMessages(placeId, includeHidden));
+  }
+
+  function statusCountsFromMessages(messages) {
+    return latestDailyStatusMessages(messages).reduce((acc, message) => {
+      acc[message.status] = (acc[message.status] || 0) + 1;
+      return acc;
+    }, {});
+  }
+
+  function dailyStatusCounts(placeId) {
+    return statusCountsFromMessages(placeMessages(placeId));
+  }
+
+  function todayUserStatusMessage(placeId) {
+    const key = currentUserKey();
+    const nickname = String(state.user?.nickname || "").trim();
+    if (!key && !nickname) return null;
+    const storedMatch = currentMessagesSnapshot()
+      .filter((message) => message.placeId === placeId && !message.hidden && isStatusMessage(message) && isTodayMessage(message))
+      .filter((message) => messageUserKey(message) === key || (nickname && message.author === nickname))
+      .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))[0] || null;
+    if (storedMatch) return storedMatch;
+    const renderedId = renderedTodayUserStatusMessageId(placeId, key, nickname);
+    if (!renderedId) return null;
+    return currentMessagesSnapshot().find((message) => message.id === renderedId) || null;
+  }
+
+  function renderedTodayUserStatusMessageId(placeId, key, nickname) {
+    const today = koreaDateKey();
+    let latest = null;
+    main.querySelectorAll(".chat-message[data-message-id]").forEach((element) => {
+      const authorKey = element.dataset.messageAuthorKey || "";
+      const authorName = element.dataset.messageAuthor || "";
+      if (element.dataset.messagePlaceId !== placeId) return;
+      if (element.dataset.messageDateKey !== today) return;
+      if (!STATUS_ORDER.includes(element.dataset.messageStatus || "")) return;
+      if (authorKey !== key && (!nickname || authorName !== nickname)) return;
+      if (!latest || new Date(element.dataset.messageCreatedAt || 0) > new Date(latest.createdAt || 0)) {
+        latest = { id: element.dataset.messageId, createdAt: element.dataset.messageCreatedAt };
+      }
+    });
+    return latest?.id || "";
   }
 
   function messageLikeCount(message) {
@@ -1694,6 +1809,90 @@
     return sentence ? [{ id: `${place.id}-recent-summary`, sentence }] : [];
   }
 
+  function reviewFactCandidates(review) {
+    const text = `${review.summary || ""} ${review.body || ""} ${(review.checklist || []).join(" ")}`.replace(/\s+/g, " ").trim();
+    const facts = [];
+    if (!text) return facts;
+
+    if (/주차/u.test(text)) {
+      if (/좋음|편|가능|지원/u.test(text)) facts.push({ topic: "review-parking", phrase: "후기 기준 주차 이용은 무난한 편" });
+      else facts.push({ topic: "review-parking", phrase: "후기에서 주차 확인 필요 신호가 있습니다" });
+    }
+    if (/대기/u.test(text)) {
+      if (/짧|없|거의 없/u.test(text)) facts.push({ topic: "review-wait", phrase: "후기 기준 대기는 짧은 편" });
+      else facts.push({ topic: "review-wait", phrase: "후기에서 대기 시간 확인이 필요합니다" });
+    }
+    if (/청결|깨끗/u.test(text)) {
+      facts.push({ topic: "review-clean", phrase: "청결 만족 신호가 있습니다" });
+    }
+    if (/아이 만족|좋아했|만족|재방문/u.test(text)) {
+      facts.push({ topic: "review-child", phrase: "아이 만족도가 높다는 후기가 있습니다" });
+    }
+    if (/유모차/u.test(text)) {
+      facts.push({ topic: "review-stroller", phrase: "유모차 이용 정보가 후기에서 확인됩니다" });
+    }
+    if (/식사|음료|카페|매점|먹/u.test(text)) {
+      facts.push({ topic: "review-food", phrase: "식음료 동선은 방문 전 확인하면 좋습니다" });
+    }
+    if (/여벌|옷|양말|돗자리|바람막이/u.test(text)) {
+      facts.push({ topic: "review-prep", phrase: "준비물을 챙기면 방문 만족도가 올라갑니다" });
+    }
+
+    return facts;
+  }
+
+  function visitHighlightItems(place) {
+    const facts = [];
+    const usedTopics = new Set();
+    placeReviews(place.id)
+      .filter((review) => !review.hidden)
+      .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+      .slice(0, 6)
+      .forEach((review) => {
+        reviewFactCandidates(review).forEach((fact) => addTalkFact(facts, usedTopics, fact.topic, fact.phrase));
+      });
+    recentInformativeTalks(place.id, 8).forEach((message) => {
+      talkFactCandidates(message).forEach((fact) => addTalkFact(facts, usedTopics, `talk-${fact.topic}`, fact.phrase));
+    });
+    return facts.slice(0, 4);
+  }
+
+  function renderVisitHighlights(place) {
+    const highlights = visitHighlightItems(place);
+    const hasReviewSource = placeReviews(place.id).some((review) => !review.hidden);
+    const sourceTab = hasReviewSource ? "reviews" : "chat";
+    return `
+      <section class="panel visit-highlight-panel" aria-label="방문 하이라이트">
+        <div class="highlight-panel-head">
+          <div>
+            <span class="status-badge">후기 · 톡 하이라이트</span>
+            <h2>방문 전에 볼 핵심 정보</h2>
+          </div>
+          <button class="ghost-button compact" type="button" data-action="detail-tab" data-tab="${highlights.length ? sourceTab : "chat"}">
+            ${highlights.length ? (hasReviewSource ? "후기 보기" : "톡 보기") : "톡 남기기"}
+          </button>
+        </div>
+        ${highlights.length ? `
+          <div class="visit-highlight-grid">
+            ${highlights.map((item) => `<div class="visit-highlight-item"><span>${escapeHtml(highlightTopicLabel(item.topic))}</span><strong>${escapeHtml(item.phrase)}</strong></div>`).join("")}
+          </div>
+        ` : `<p class="subtle">아직 이 장소의 후기와 톡이 부족합니다. 방문 경험이 쌓이면 핵심 하이라이트가 이곳에 먼저 표시됩니다.</p>`}
+      </section>
+    `;
+  }
+
+  function highlightTopicLabel(topic) {
+    if (/parking/u.test(topic)) return "주차";
+    if (/wait|entry|program/u.test(topic)) return "대기";
+    if (/clean|care/u.test(topic)) return "편의";
+    if (/child|age/u.test(topic)) return "아이 반응";
+    if (/stroller|movement/u.test(topic)) return "동선";
+    if (/food/u.test(topic)) return "식음료";
+    if (/prep/u.test(topic)) return "준비";
+    if (/crowd/u.test(topic)) return "혼잡";
+    return "체크";
+  }
+
   function lastMessage(placeId) {
     return [...placeMessages(placeId)].pop();
   }
@@ -1751,10 +1950,36 @@
       admin: renderAdmin
     };
     main.innerHTML = (renderers[ui.view] || renderHome)();
+    syncRenderedStatusCount();
     window.requestAnimationFrame(() => {
       const chatScroll = main.querySelector("[data-chat-scroll]");
       if (chatScroll) chatScroll.scrollTop = chatScroll.scrollHeight;
     });
+  }
+
+  function syncRenderedStatusCount() {
+    const countElement = main.querySelector("[data-status-count]");
+    if (!countElement) return;
+    const today = koreaDateKey();
+    const latestByUser = new Map();
+    main.querySelectorAll(".chat-message[data-message-id]").forEach((element) => {
+      const status = element.dataset.messageStatus || "";
+      const userKey = element.dataset.messageAuthorKey || element.dataset.messageAuthor || "";
+      if (!userKey || !STATUS_ORDER.includes(status)) return;
+      if (element.dataset.messageDateKey !== today) return;
+      const previous = latestByUser.get(userKey);
+      const createdAt = element.dataset.messageCreatedAt || "";
+      if (!previous || new Date(createdAt) >= new Date(previous.createdAt || 0)) {
+        latestByUser.set(userKey, { status, createdAt });
+      }
+    });
+    const counts = [...latestByUser.values()].reduce((acc, message) => {
+      acc[message.status] = (acc[message.status] || 0) + 1;
+      return acc;
+    }, {});
+    countElement.textContent = STATUS_ORDER
+      .map((status) => `${STATUS_COUNT_LABELS[status]} ${counts[status] || 0}`)
+      .join(" · ");
   }
 
   function renderHeroCandidate(place, index) {
@@ -2059,11 +2284,11 @@
               <span class="status-badge">현재 ${escapeHtml(place.crowd)}</span>
             </div>
             <div class="action-grid">
-              <button class="primary-button compact" type="button" data-action="route" data-place-id="${place.id}">길찾기</button>
-              <button class="secondary-button compact" type="button" data-action="share" data-place-id="${place.id}">공유</button>
               <button class="secondary-button compact detail-mode-button" type="button" data-action="detail-tab" data-tab="info" aria-pressed="${ui.detailTab === "info"}">정보</button>
               <button class="secondary-button compact detail-mode-button" type="button" data-action="detail-tab" data-tab="reviews" aria-pressed="${ui.detailTab === "reviews"}">후기</button>
               <button class="secondary-button compact detail-mode-button" type="button" data-action="detail-tab" data-tab="chat" aria-pressed="${ui.detailTab === "chat"}">톡</button>
+              <button class="secondary-button compact" type="button" data-action="route" data-place-id="${place.id}">길찾기</button>
+              <button class="secondary-button compact" type="button" data-action="share" data-place-id="${place.id}">공유</button>
             </div>
           </div>
         </section>
@@ -2088,6 +2313,7 @@
     return `
       <section class="dashboard-grid info-layout">
         <div class="info-main-stack">
+          ${renderVisitHighlights(place)}
           <section class="panel visit-tip-panel" aria-label="방문 팁">
             <div class="visit-tip-list">
               ${place.tips.map((tip) => `<span>${escapeHtml(tip)}</span>`).join("")}
@@ -2217,7 +2443,7 @@
         <h3>${escapeHtml(review.summary || "방문 후기")}</h3>
         <p>${escapeHtml(review.body || "")}</p>
         ${review.photoUrl ? `<img class="review-photo" src="${review.photoUrl}" alt="${escapeHtml(review.author)}님이 올린 후기 사진" loading="lazy" decoding="async">` : ""}
-        ${review.checklist?.length ? `<div class="tag-row">${review.checklist.map((item) => `<span class="tag">${escapeHtml(item)}</span>`).join("")}</div>` : ""}
+        ${review.checklist?.length ? `<div class="review-checklist" aria-label="후기 체크리스트">${review.checklist.map((item) => `<span class="review-check-item">${escapeHtml(item)}</span>`).join("")}</div>` : ""}
         ${place ? `<p class="subtle">${escapeHtml(place.name)}</p>` : ""}
         ${renderContentActions("review", review.id, isMine)}
       </article>
@@ -2260,18 +2486,17 @@
   }
 
   function renderChatTab(place, messages) {
-    const visibleMessages = messages.filter((message) => !message.hidden);
-    const counts = visibleMessages.reduce((acc, message) => {
-      acc[message.status] = (acc[message.status] || 0) + 1;
-      return acc;
-    }, {});
+    const counts = statusCountsFromMessages(messages);
+    const countText = STATUS_ORDER
+      .map((status) => `${STATUS_COUNT_LABELS[status]} ${counts[status] || 0}`)
+      .join(" · ");
 
     return `
       <section class="chat-layout chat-layout-full">
         <div class="chat-room panel" aria-label="톡">
           <div class="chat-topbar compact-chat-topbar">
             <div>
-              <p class="subtle">현지 ${counts.onsite || 0} · 가는 중 ${counts.going || 0} · 다녀옴 ${counts.visited || 0}</p>
+              <p class="subtle" data-status-count>${countText}</p>
             </div>
           </div>
           <div class="chat-scroll" data-chat-scroll tabindex="0" aria-label="이전 톡까지 스크롤해서 보기">
@@ -2293,7 +2518,16 @@
     const liked = isMessageLiked(message.id);
     const likeCount = messageLikeCount(message);
     return `
-      <article class="chat-message ${isMine ? "mine" : "other"} ${message.hidden ? "hidden-message" : ""}">
+      <article
+        class="chat-message ${isMine ? "mine" : "other"} ${message.hidden ? "hidden-message" : ""}"
+        data-message-id="${escapeHtml(message.id)}"
+        data-message-place-id="${escapeHtml(message.placeId)}"
+        data-message-status="${escapeHtml(message.status || "")}"
+        data-message-author-key="${escapeHtml(messageUserKey(message) || message.author || "")}"
+        data-message-author="${escapeHtml(message.author || "")}"
+        data-message-date-key="${escapeHtml(koreaDateKey(message.createdAt))}"
+        data-message-created-at="${escapeHtml(message.createdAt || "")}"
+      >
         <div class="chat-meta">
           <strong>${escapeHtml(message.author)}</strong>
           <span>${compactDate(message.createdAt)}</span>
@@ -2329,10 +2563,10 @@
         </div>
         <div class="chat-tools-row">
           <div class="status-segment" role="radiogroup" aria-label="참여 상태">
-            ${Object.entries(STATUS_LABELS).map(([value, label]) => `
+            ${STATUS_ORDER.map((value) => `
               <label>
                 <input type="radio" name="status" value="${value}" ${ui.chatStatus === value ? "checked" : ""}>
-                <span>${escapeHtml(label)}</span>
+                <span>${escapeHtml(STATUS_LABELS[value])}</span>
               </label>
             `).join("")}
           </div>
@@ -2818,7 +3052,8 @@
       const text = String(formData.get("message") || "").trim();
       const photo = formData.get("photo");
       const hasPhoto = photo instanceof File && photo.size > 0;
-      if (!text && !hasPhoto) {
+      const existingMessage = todayUserStatusMessage(form.dataset.placeId);
+      if (!text && !hasPhoto && !existingMessage) {
         showToast("메시지나 현장 사진 중 하나를 입력하세요.");
         return;
       }
@@ -2837,33 +3072,45 @@
           return;
         }
       }
-      const newMessage = {
-        id: uid("message"),
+      const now = new Date().toISOString();
+      const gpsVerified = Boolean(photoGps) || Boolean(existingMessage?.gpsVerified);
+      const nextMessage = {
+        ...(existingMessage || {}),
+        id: existingMessage?.id || uid("message"),
         placeId: form.dataset.placeId,
         author: state.user.nickname,
+        authorId: currentUserKey(),
         status,
-        verified: Boolean(photoGps) || status === "onsite" || status === "visited",
-        text: text || "현장 사진을 공유했어요.",
-        photoUrl,
-        gpsVerified: Boolean(photoGps),
-        gps: photoGps,
-        createdAt: new Date().toISOString(),
+        verified: gpsVerified || status === "onsite" || status === "visited",
+        text: text || existingMessage?.text || "현장 사진을 공유했어요.",
+        photoUrl: photoUrl || existingMessage?.photoUrl || "",
+        gpsVerified,
+        gps: photoGps || existingMessage?.gps || null,
+        createdAt: now,
         hidden: false,
-        likes: 0
+        likes: existingMessage?.likes || 0
       };
-      state.messages.push(newMessage);
-      const earned = awardReward("chat", form.dataset.placeId)
+      if (existingMessage) {
+        state.messages = state.messages.map((message) => message.id === existingMessage.id ? nextMessage : message);
+      } else {
+        state.messages.push(nextMessage);
+      }
+      const earned = existingMessage ? 0 : awardReward("chat", form.dataset.placeId)
         + (hasPhoto ? awardReward("photo", form.dataset.placeId) : 0)
-        + (aiHighlightScore(newMessage) >= 34 ? awardReward("highlight", form.dataset.placeId) : 0);
-      if (isLikelyAiQuestion(newMessage.text)) {
-        ui.aiQuestion = newMessage.text;
-        ui.aiQuestionMessageId = newMessage.id;
+        + (aiHighlightScore(nextMessage) >= 34 ? awardReward("highlight", form.dataset.placeId) : 0);
+      if (isLikelyAiQuestion(nextMessage.text)) {
+        ui.aiQuestion = nextMessage.text;
+        ui.aiQuestionMessageId = nextMessage.id;
       } else {
         ui.aiQuestion = "";
         ui.aiQuestionMessageId = "";
       }
       saveState();
-      showToast(photoGps ? "방문 위치 인증 톡을 전송했습니다." : "톡을 전송했습니다.");
+      if (existingMessage) {
+        showToast(`${STATUS_COUNT_LABELS[status]} 상태로 변경했습니다.`);
+      } else {
+        showToast(photoGps ? "방문 위치 인증 톡을 전송했습니다." : "톡을 전송했습니다.");
+      }
       render();
     }
 

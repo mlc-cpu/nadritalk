@@ -1,12 +1,12 @@
-const CACHE_NAME = "nadritalk-web-v52";
+const CACHE_NAME = "nadritalk-web-v58";
 const APP_SHELL = [
   "./",
   "./index.html",
-  "./styles.css?v=20260517aa",
-  "./app.js?v=20260517aa",
+  "./styles.css?v=20260517ag",
+  "./app.js?v=20260517ag",
   "./manifest.webmanifest",
-  "./assets/icon.svg?v=20260517aa",
-  "./data/places.generated.json?v=20260517aa"
+  "./assets/icon.svg?v=20260517ag",
+  "./data/places.generated.json?v=20260517ag"
 ];
 
 self.addEventListener("install", (event) => {
