@@ -1,0 +1,28 @@
+{
+  "generatedAt": "",
+  "sources": [
+    {
+      "provider": "한국관광공사 TourAPI",
+      "url": "https://www.data.go.kr/data/15101578/openapi.do",
+      "status": "missing_key",
+      "count": 0,
+      "areaCodes": [
+        "1",
+        "31",
+        "2"
+      ],
+      "keywords": [
+        "어린이",
+        "키즈",
+        "가족",
+        "체험",
+        "과학관",
+        "박물관",
+        "미술관",
+        "공원",
+        "숲체험",
+        "놀이터"
+      ]
+    }
+  ]
+}

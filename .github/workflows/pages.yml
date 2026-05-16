@@ -5,9 +5,11 @@ on:
     branches:
       - main
   workflow_dispatch:
+  schedule:
+    - cron: "0 19 * * 0"
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -24,6 +26,29 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Generate TourAPI place data
+        env:
+          TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
+        run: node scripts/update-tourapi-data.mjs
+
+      - name: Commit generated data
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: |
+          if git diff --quiet -- data/places.generated.json data/sources.generated.json; then
+            echo "No generated data changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/places.generated.json data/sources.generated.json
+          git commit -m "Update TourAPI place data"
+          git push
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

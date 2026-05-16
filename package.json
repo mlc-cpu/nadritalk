@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "scripts": {
+    "check": "node --check app.js && node --check sw.js && node --check scripts/update-tourapi-data.mjs",
+    "update:tourapi": "node scripts/update-tourapi-data.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

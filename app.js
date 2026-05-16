@@ -2,7 +2,8 @@
   "use strict";
 
   const STORAGE_KEY = "nadritalk.web.v2";
-  const APP_VERSION = "20260516bc";
+  const APP_VERSION = "20260517aa";
+  const GENERATED_PLACE_DATA_URL = `./data/places.generated.json?v=${APP_VERSION}`;
   const REALTIME_REFRESH_MS = 15 * 60 * 1000;
   const REALTIME_STALE_MS = 10 * 60 * 1000;
   const OPEN_METEO_FORECAST_URL = "https://api.open-meteo.com/v1/forecast";
@@ -587,6 +588,12 @@
   let installPromptEvent = null;
   let toastTimer = null;
   let state = loadState();
+  const generatedPlaceData = {
+    status: "seed",
+    generatedAt: "",
+    source: "",
+    places: []
+  };
 
   function loadState() {
     try {
@@ -665,12 +672,92 @@
     }
   }
 
+  async function loadGeneratedPlaceData() {
+    try {
+      const response = await fetch(GENERATED_PLACE_DATA_URL, { cache: "no-store" });
+      if (!response.ok) throw new Error(`Generated place data ${response.status}`);
+      const payload = await response.json();
+      const generatedPlaces = Array.isArray(payload.places)
+        ? payload.places.map(normalizeGeneratedPlace).filter(Boolean)
+        : [];
+      if (!generatedPlaces.length) throw new Error("Generated place data is empty.");
+      generatedPlaceData.status = "generated";
+      generatedPlaceData.generatedAt = payload.generatedAt || "";
+      generatedPlaceData.source = payload.source || "한국관광공사 TourAPI";
+      generatedPlaceData.places = generatedPlaces;
+      ui.selectedPlaceId = generatedPlaces.some((place) => place.id === ui.selectedPlaceId)
+        ? ui.selectedPlaceId
+        : generatedPlaces[0].id;
+    } catch (error) {
+      console.info("Generated place data unavailable. Using seed data.", error);
+      generatedPlaceData.status = "seed";
+      generatedPlaceData.places = [];
+    }
+  }
+
+  function normalizeGeneratedPlace(place) {
+    if (!place || typeof place !== "object" || !place.id || !place.name) return null;
+    const category = place.category || "가족 나들이";
+    const ageMin = Number.isFinite(Number(place.ageMin)) ? Number(place.ageMin) : 3;
+    const ageMax = Number.isFinite(Number(place.ageMax)) ? Number(place.ageMax) : 12;
+    const latitude = Number(place.latitude);
+    const longitude = Number(place.longitude);
+    return {
+      ...place,
+      category,
+      region: place.region || "지역 확인",
+      address: place.address || "주소 확인 필요",
+      phone: place.phone || "확인 필요",
+      latitude: Number.isFinite(latitude) ? latitude : null,
+      longitude: Number.isFinite(longitude) ? longitude : null,
+      distanceKm: Number.isFinite(Number(place.distanceKm)) ? Number(place.distanceKm) : 0,
+      indoorOutdoor: place.indoorOutdoor === "outdoor" ? "outdoor" : "indoor",
+      cost: place.cost === "free" ? "free" : "paid",
+      ageBand: place.ageBand || `${ageMin}-${ageMax}세`,
+      ageMin,
+      ageMax,
+      agePolicy: place.agePolicy || {
+        admission: { minAge: 0, maxAge: null, label: "공식 연령 제한은 방문 전 확인 필요" },
+        facility: { minAge: ageMin, maxAge: ageMax, label: `나들이톡 권장 ${ageMin}-${ageMax}세` },
+        discounts: []
+      },
+      interests: Array.isArray(place.interests) && place.interests.length ? place.interests : ["체험"],
+      image: place.image || "assets/place-museum.webp",
+      imageCredit: place.imageCredit || "한국관광공사 TourAPI",
+      rating: Number.isFinite(Number(place.rating)) ? Number(place.rating) : null,
+      hours: place.hours || "운영 시간 공식 사이트 확인",
+      price: place.price || "요금 공식 사이트 확인",
+      priceRange: place.priceRange || { min: 0, max: 0, label: place.cost === "free" ? "무료" : "요금 확인 필요" },
+      description: place.description || `${place.name} 공식 관광 정보입니다.`,
+      facilities: {
+        parking: place.facilities?.parking || "공식 사이트 확인",
+        stroller: place.facilities?.stroller || "공식 사이트 확인",
+        nursing: place.facilities?.nursing || "공식 사이트 확인",
+        food: place.facilities?.food || "공식 사이트 확인"
+      },
+      tips: Array.isArray(place.tips) && place.tips.length ? place.tips : ["방문 전 운영시간 확인"],
+      crowd: place.crowd || "확인 필요",
+      talkActive: Number.isFinite(Number(place.talkActive)) ? Number(place.talkActive) : 0,
+      favoriteCount: Number.isFinite(Number(place.favoriteCount)) ? Number(place.favoriteCount) : 0,
+      mapX: Number.isFinite(Number(place.mapX)) ? Number(place.mapX) : 50,
+      mapY: Number.isFinite(Number(place.mapY)) ? Number(place.mapY) : 50
+    };
+  }
+
+  function basePlaces() {
+    return generatedPlaceData.places.length ? generatedPlaceData.places : seedPlaces;
+  }
+
   function places() {
-    return [...seedPlaces, ...state.extraPlaces].filter((place) => place.status !== "hidden");
+    return [...basePlaces(), ...state.extraPlaces].filter((place) => place.status !== "hidden");
+  }
+
+  function findPlace(placeId) {
+    return places().find((place) => place.id === placeId);
   }
 
   function getPlace(placeId) {
-    return places().find((place) => place.id === placeId) || places()[0];
+    return findPlace(placeId) || places()[0];
   }
 
   function shouldRefreshRealtime(force = false) {
@@ -789,6 +876,20 @@
   function renderPhoneInfo(place) {
     if (!place.phone || !String(place.phone).match(/\d/)) return "확인 필요";
     return `<a class="phone-link" href="${phoneHref(place.phone)}">${escapeHtml(place.phone)}</a>`;
+  }
+
+  function renderSourceInfo(place) {
+    const source = place.dataSource;
+    if (!source) return "나들이톡 샘플 데이터";
+    const provider = escapeHtml(source.provider || "공식 데이터");
+    const fetchedAt = source.fetchedAt ? ` · ${escapeHtml(compactDate(source.fetchedAt))} 갱신` : "";
+    const homepage = source.homepage
+      ? ` · <a class="phone-link" href="${escapeHtml(source.homepage)}" target="_blank" rel="noopener">공식 페이지</a>`
+      : "";
+    const dataUrl = source.url
+      ? `<a class="phone-link" href="${escapeHtml(source.url)}" target="_blank" rel="noopener">${provider}</a>`
+      : provider;
+    return `${dataUrl}${fetchedAt}${homepage}`;
   }
 
   function hasCoordinates(place) {
@@ -1164,7 +1265,7 @@
   }
 
   function savedPreferenceProfile() {
-    const saved = state.savedPlaceIds.map(getPlace).filter(Boolean);
+    const saved = state.savedPlaceIds.map(findPlace).filter(Boolean);
     const categories = new Map();
     const interests = new Map();
     saved.forEach((place) => {
@@ -1200,7 +1301,10 @@
   function scorePlace(place) {
     const child = primaryChild();
     const savedProfile = savedPreferenceProfile();
-    let score = place.rating * 10 + place.talkActive - place.distanceKm * 0.4 + crowdPreferenceScore(place) + savedPreferenceScore(place, savedProfile) + realtimeWeatherScore(place);
+    const ratingScore = Number.isFinite(Number(place.rating)) ? Number(place.rating) * 10 : 0;
+    const talkScore = Number.isFinite(Number(place.talkActive)) ? Number(place.talkActive) : 0;
+    const distancePenalty = Number.isFinite(Number(place.distanceKm)) ? Number(place.distanceKm) * 0.4 : 0;
+    let score = ratingScore + talkScore - distancePenalty + crowdPreferenceScore(place) + savedPreferenceScore(place, savedProfile) + realtimeWeatherScore(place);
     if (!child) return score;
     const age = getChildAge(child);
     if (age && age >= place.ageMin && age <= place.ageMax) score += 28;
@@ -1596,9 +1700,17 @@
 
   function ratingFor(place) {
     const reviews = placeReviews(place.id);
-    if (!reviews.length) return place.rating.toFixed(1);
+    if (!reviews.length) {
+      const rating = Number(place.rating);
+      return Number.isFinite(rating) && rating > 0 ? rating.toFixed(1) : "정보 없음";
+    }
     const average = reviews.reduce((sum, review) => sum + Number(review.rating || 0), 0) / reviews.length;
     return average.toFixed(1);
+  }
+
+  function ratingInfoFor(place) {
+    const rating = ratingFor(place);
+    return rating === "정보 없음" ? rating : `${rating} / 5`;
   }
 
   function favoriteCountFor(place) {
@@ -1994,7 +2106,8 @@
               ${renderInfoItem("유모차", escapeHtml(place.facilities.stroller))}
               ${renderInfoItem("수유실", escapeHtml(place.facilities.nursing))}
               ${renderInfoItem("식음료", escapeHtml(place.facilities.food))}
-              ${renderInfoItem("평점", `${ratingFor(place)} / 5`)}
+              ${renderInfoItem("평점", ratingInfoFor(place))}
+              ${renderInfoItem("정보 출처", renderSourceInfo(place), true)}
             </div>
             ${renderAgeGuidance(place)}
           </section>
@@ -2267,7 +2380,7 @@
   }
 
   function renderFavorites() {
-    const saved = state.savedPlaceIds.map(getPlace).filter(Boolean);
+    const saved = state.savedPlaceIds.map(findPlace).filter(Boolean);
     return `
       <div class="view">
         <div class="section-head">
@@ -2918,7 +3031,12 @@
     });
   }
 
-  render();
-  updateRealtimeData();
+  async function initializeApp() {
+    await loadGeneratedPlaceData();
+    render();
+    updateRealtimeData();
+  }
+
+  initializeApp();
   window.setInterval(() => updateRealtimeData(), REALTIME_REFRESH_MS);
 })();
