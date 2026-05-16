@@ -14,13 +14,10 @@ const DEFAULT_KEYWORDS = [
   "가족",
   "체험",
   "과학관",
-  "박물관",
-  "미술관",
-  "공원",
-  "숲체험",
-  "놀이터"
+  "공원"
 ];
 const DEFAULT_ORIGIN = { latitude: 37.5172, longitude: 126.8946 };
+const REQUEST_TIMEOUT_MS = Number(process.env.TOUR_API_TIMEOUT_MS || 10000);
 const FAMILY_RELEVANCE = /어린이|아이|아동|유아|키즈|가족|체험|과학|박물관|미술|공원|생태|놀이|놀이터|숲|도서관|수목원|동물|공연|극장|관람|전시/u;
 const EXCLUDED_TERMS = /성인|주점|클럽|카지노|유흥|술집/u;
 const LOCAL_FALLBACK_IMAGES = {
@@ -35,8 +32,8 @@ const LOCAL_FALLBACK_IMAGES = {
 };
 
 const serviceKey = normalizeServiceKey(process.env.TOUR_API_KEY || process.env.TOURAPI_KEY || "");
-const maxPlaces = Number(process.env.TOUR_API_MAX_PLACES || 80);
-const numRows = Number(process.env.TOUR_API_ROWS || 30);
+const maxPlaces = Number(process.env.TOUR_API_MAX_PLACES || 40);
+const numRows = Number(process.env.TOUR_API_ROWS || 12);
 const areaCodes = csv(process.env.TOUR_API_AREA_CODES, DEFAULT_AREA_CODES);
 const keywords = csv(process.env.TOUR_API_KEYWORDS, DEFAULT_KEYWORDS);
 
@@ -90,14 +87,19 @@ async function collectKeywordCandidates() {
   const candidates = [];
   for (const keyword of keywords) {
     for (const areaCode of areaCodes) {
-      const items = await tourApi("searchKeyword2", {
-        keyword,
-        areaCode,
-        arrange: "Q",
-        numOfRows: String(numRows),
-        pageNo: "1"
-      });
-      candidates.push(...items);
+      try {
+        const items = await tourApi("searchKeyword2", {
+          keyword,
+          areaCode,
+          arrange: "Q",
+          numOfRows: String(numRows),
+          pageNo: "1"
+        });
+        console.log(`TourAPI keyword="${keyword}" area=${areaCode}: ${items.length} candidates`);
+        candidates.push(...items);
+      } catch (error) {
+        console.warn(`TourAPI keyword="${keyword}" area=${areaCode} failed: ${error.message}`);
+      }
     }
   }
   return candidates;
@@ -199,7 +201,19 @@ async function tourApi(endpoint, params) {
     _type: "json",
     ...params
   });
-  const response = await fetch(`${url}?serviceKey=${serviceKey}&${query.toString()}`);
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+  let response;
+  try {
+    response = await fetch(`${url}?serviceKey=${serviceKey}&${query.toString()}`, {
+      signal: controller.signal
+    });
+  } catch (error) {
+    if (error.name === "AbortError") throw new Error(`TourAPI request timed out after ${REQUEST_TIMEOUT_MS}ms`);
+    throw error;
+  } finally {
+    clearTimeout(timeout);
+  }
   const text = await response.text();
   if (!response.ok) throw new Error(`TourAPI HTTP ${response.status}: ${text.slice(0, 160)}`);
 

@@ -23,6 +23,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -35,6 +36,9 @@ jobs:
       - name: Generate TourAPI place data
         env:
           TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
+          TOUR_API_MAX_PLACES: "40"
+          TOUR_API_ROWS: "12"
+          TOUR_API_TIMEOUT_MS: "10000"
         run: node scripts/update-tourapi-data.mjs
 
       - name: Commit generated data
