@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-24T19:59:49.009Z",
+  "generatedAt": "2026-05-31T20:00:50.358Z",
   "source": "한국관광공사 TourAPI",
   "sourceUrl": "https://www.data.go.kr/data/15101578/openapi.do",
   "places": [
@@ -71,7 +71,7 @@
         "homepage": "",
         "contentId": "2773287",
         "contentTypeId": "12",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20251029163143"
       }
     },
@@ -143,7 +143,7 @@
         "homepage": "",
         "contentId": "1105980",
         "contentTypeId": "12",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20250404164219"
       }
     },
@@ -215,7 +215,7 @@
         "homepage": "",
         "contentId": "2733981",
         "contentTypeId": "12",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20250610101223"
       }
     },
@@ -287,7 +287,7 @@
         "homepage": "",
         "contentId": "2753103",
         "contentTypeId": "12",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20250306133844"
       }
     },
@@ -357,7 +357,7 @@
         "homepage": "",
         "contentId": "3384023",
         "contentTypeId": "15",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20251023143000"
       }
     },
@@ -429,7 +429,7 @@
         "homepage": "",
         "contentId": "2756153",
         "contentTypeId": "12",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20250610104436"
       }
     },
@@ -499,7 +499,7 @@
         "homepage": "",
         "contentId": "3082446",
         "contentTypeId": "28",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20250522175506"
       }
     },
@@ -569,7 +569,7 @@
         "homepage": "",
         "contentId": "2792594",
         "contentTypeId": "28",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20250520101518"
       }
     },
@@ -641,7 +641,7 @@
         "homepage": "",
         "contentId": "2451912",
         "contentTypeId": "12",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20250408143951"
       }
     },
@@ -713,7 +713,7 @@
         "homepage": "",
         "contentId": "126499",
         "contentTypeId": "12",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20250718090000"
       }
     },
@@ -783,7 +783,7 @@
         "homepage": "",
         "contentId": "3081528",
         "contentTypeId": "12",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20250519150552"
       }
     },
@@ -855,7 +855,7 @@
         "homepage": "",
         "contentId": "2751331",
         "contentTypeId": "14",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20251127182751"
       }
     },
@@ -928,7 +928,7 @@
         "homepage": "",
         "contentId": "130778",
         "contentTypeId": "14",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20250805162546"
       }
     },
@@ -999,7 +999,7 @@
         "homepage": "",
         "contentId": "3113222",
         "contentTypeId": "15",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20251111133409"
       }
     },
@@ -1071,7 +1071,7 @@
         "homepage": "",
         "contentId": "2762874",
         "contentTypeId": "12",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20250328153740"
       }
     },
@@ -1143,7 +1143,7 @@
         "homepage": "",
         "contentId": "2545920",
         "contentTypeId": "14",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20250415103608"
       }
     },
@@ -1215,7 +1215,7 @@
         "homepage": "",
         "contentId": "2999378",
         "contentTypeId": "14",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20250618173304"
       }
     },
@@ -1286,7 +1286,7 @@
         "homepage": "",
         "contentId": "3442375",
         "contentTypeId": "12",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20241226110512"
       }
     },
@@ -1358,7 +1358,7 @@
         "homepage": "",
         "contentId": "2662902",
         "contentTypeId": "14",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20250905090022"
       }
     },
@@ -1430,7 +1430,7 @@
         "homepage": "",
         "contentId": "3015077",
         "contentTypeId": "12",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20251105175657"
       }
     },
@@ -1502,7 +1502,7 @@
         "homepage": "",
         "contentId": "126490",
         "contentTypeId": "12",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20251114174435"
       }
     },
@@ -1574,7 +1574,7 @@
         "homepage": "",
         "contentId": "753850",
         "contentTypeId": "12",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20251117095534"
       }
     },
@@ -1646,7 +1646,7 @@
         "homepage": "",
         "contentId": "2743740",
         "contentTypeId": "12",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20250316120453"
       }
     },
@@ -1718,7 +1718,7 @@
         "homepage": "",
         "contentId": "128989",
         "contentTypeId": "12",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20250903170139"
       }
     },
@@ -1790,7 +1790,7 @@
         "homepage": "",
         "contentId": "2781599",
         "contentTypeId": "12",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20250320161602"
       }
     },
@@ -1860,7 +1860,7 @@
         "homepage": "",
         "contentId": "1017568",
         "contentTypeId": "28",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20251028182514"
       }
     },
@@ -1933,7 +1933,7 @@
         "homepage": "",
         "contentId": "2371001",
         "contentTypeId": "14",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20251118185400"
       }
     },
@@ -2006,7 +2006,7 @@
         "homepage": "",
         "contentId": "130826",
         "contentTypeId": "14",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20250523093926"
       }
     },
@@ -2078,7 +2078,7 @@
         "homepage": "",
         "contentId": "2781860",
         "contentTypeId": "12",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20250919154249"
       }
     },
@@ -2151,7 +2151,7 @@
         "homepage": "",
         "contentId": "130827",
         "contentTypeId": "14",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20250522173736"
       }
     },
@@ -2224,7 +2224,7 @@
         "homepage": "",
         "contentId": "130825",
         "contentTypeId": "14",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20251222160059"
       }
     },
@@ -2296,7 +2296,7 @@
         "homepage": "",
         "contentId": "2742316",
         "contentTypeId": "12",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20250919163624"
       }
     },
@@ -2368,7 +2368,7 @@
         "homepage": "",
         "contentId": "2507011",
         "contentTypeId": "14",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20250610111014"
       }
     },
@@ -2438,7 +2438,7 @@
         "homepage": "",
         "contentId": "2610168",
         "contentTypeId": "12",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20250924142714"
       }
     },
@@ -2508,7 +2508,7 @@
         "homepage": "",
         "contentId": "2814157",
         "contentTypeId": "32",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20251126141532"
       }
     },
@@ -2578,7 +2578,7 @@
         "homepage": "",
         "contentId": "3014805",
         "contentTypeId": "28",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20250625162257"
       }
     },
@@ -2648,7 +2648,7 @@
         "homepage": "",
         "contentId": "2745701",
         "contentTypeId": "28",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20250411171255"
       }
     },
@@ -2718,7 +2718,7 @@
         "homepage": "",
         "contentId": "2747505",
         "contentTypeId": "28",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20250411181110"
       }
     },
@@ -2788,7 +2788,7 @@
         "homepage": "",
         "contentId": "2726664",
         "contentTypeId": "28",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20250410104809"
       }
     },
@@ -2858,7 +2858,7 @@
         "homepage": "",
         "contentId": "2738781",
         "contentTypeId": "28",
-        "fetchedAt": "2026-05-24T19:59:49.009Z",
+        "fetchedAt": "2026-05-31T20:00:50.358Z",
         "modifiedAt": "20250808102658"
       }
     }
