@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-21T20:20:20.992Z",
+  "generatedAt": "2026-06-28T20:06:26.950Z",
   "source": "한국관광공사 TourAPI",
   "sourceUrl": "https://www.data.go.kr/data/15101578/openapi.do",
   "places": [
@@ -71,7 +71,7 @@
         "homepage": "",
         "contentId": "2773287",
         "contentTypeId": "12",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20251029163143"
       }
     },
@@ -143,7 +143,7 @@
         "homepage": "",
         "contentId": "1105980",
         "contentTypeId": "12",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20250404164219"
       }
     },
@@ -215,7 +215,7 @@
         "homepage": "",
         "contentId": "2733981",
         "contentTypeId": "12",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20250610101223"
       }
     },
@@ -287,7 +287,7 @@
         "homepage": "",
         "contentId": "2753103",
         "contentTypeId": "12",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20250306133844"
       }
     },
@@ -357,7 +357,7 @@
         "homepage": "",
         "contentId": "3384023",
         "contentTypeId": "15",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20251023143000"
       }
     },
@@ -429,7 +429,7 @@
         "homepage": "",
         "contentId": "2756153",
         "contentTypeId": "12",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20250610104436"
       }
     },
@@ -499,7 +499,7 @@
         "homepage": "",
         "contentId": "3082446",
         "contentTypeId": "28",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20250522175506"
       }
     },
@@ -569,7 +569,7 @@
         "homepage": "",
         "contentId": "2792594",
         "contentTypeId": "28",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20250520101518"
       }
     },
@@ -641,7 +641,7 @@
         "homepage": "",
         "contentId": "2451912",
         "contentTypeId": "12",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20250408143951"
       }
     },
@@ -713,7 +713,7 @@
         "homepage": "",
         "contentId": "126499",
         "contentTypeId": "12",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20250718090000"
       }
     },
@@ -785,7 +785,7 @@
         "homepage": "",
         "contentId": "2751331",
         "contentTypeId": "14",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20251127182751"
       }
     },
@@ -858,7 +858,7 @@
         "homepage": "",
         "contentId": "130778",
         "contentTypeId": "14",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20250805162546"
       }
     },
@@ -929,7 +929,7 @@
         "homepage": "",
         "contentId": "3113222",
         "contentTypeId": "15",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20251111133409"
       }
     },
@@ -1001,7 +1001,7 @@
         "homepage": "",
         "contentId": "2762874",
         "contentTypeId": "12",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20250328153740"
       }
     },
@@ -1073,7 +1073,7 @@
         "homepage": "",
         "contentId": "2545920",
         "contentTypeId": "14",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20250415103608"
       }
     },
@@ -1144,7 +1144,7 @@
         "homepage": "",
         "contentId": "3442375",
         "contentTypeId": "12",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20241226110512"
       }
     },
@@ -1216,7 +1216,7 @@
         "homepage": "",
         "contentId": "2662902",
         "contentTypeId": "14",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20250905090022"
       }
     },
@@ -1288,7 +1288,7 @@
         "homepage": "",
         "contentId": "126490",
         "contentTypeId": "12",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20251114174435"
       }
     },
@@ -1360,80 +1360,8 @@
         "homepage": "",
         "contentId": "753850",
         "contentTypeId": "12",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20251117095534"
-      }
-    },
-    {
-      "id": "tour-2891556",
-      "contentId": "2891556",
-      "contentTypeId": "12",
-      "name": "백석어린이교통공원",
-      "category": "야외 공원",
-      "region": "경기도 고양시",
-      "address": "경기도 고양시 일산동구 강송로 14 고양시 어린이교통공원",
-      "phone": "031-932-0664",
-      "latitude": 37.6425310214,
-      "longitude": 126.795388359,
-      "distanceKm": 16.5,
-      "indoorOutdoor": "outdoor",
-      "cost": "paid",
-      "ageBand": "3-12세",
-      "ageMin": 3,
-      "ageMax": 12,
-      "agePolicy": {
-        "admission": {
-          "minAge": 0,
-          "maxAge": null,
-          "label": "공식 연령 제한은 방문 전 확인 필요"
-        },
-        "facility": {
-          "minAge": 3,
-          "maxAge": 12,
-          "label": "나들이톡 권장 3-12세"
-        },
-        "discounts": []
-      },
-      "interests": [
-        "자연",
-        "산책",
-        "야외놀이"
-      ],
-      "image": "https://tong.visitkorea.or.kr/cms/resource/50/2891550_image2_1.jpg",
-      "imageCredit": "한국관광공사 TourAPI",
-      "rating": null,
-      "hours": "상시 개방",
-      "price": "요금 공식 사이트 확인",
-      "priceRange": {
-        "min": 0,
-        "max": 0,
-        "label": "요금 확인 필요"
-      },
-      "description": "백석어린이교통공원 공식 관광 정보입니다.",
-      "facilities": {
-        "parking": "가능",
-        "stroller": "공식 사이트 확인",
-        "nursing": "공식 사이트 확인",
-        "food": "연중무휴"
-      },
-      "tips": [
-        "방문 전 운영시간 확인",
-        "휴무: 연중무휴",
-        "주차 정보 확인 가능"
-      ],
-      "crowd": "확인 필요",
-      "talkActive": 0,
-      "favoriteCount": 0,
-      "mapX": 26,
-      "mapY": 21,
-      "dataSource": {
-        "provider": "한국관광공사 TourAPI",
-        "url": "https://www.data.go.kr/data/15101578/openapi.do",
-        "homepage": "",
-        "contentId": "2891556",
-        "contentTypeId": "12",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
-        "modifiedAt": "20250416174953"
       }
     },
     {
@@ -1504,7 +1432,7 @@
         "homepage": "",
         "contentId": "2743740",
         "contentTypeId": "12",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20250316120453"
       }
     },
@@ -1574,7 +1502,7 @@
         "homepage": "",
         "contentId": "2908314",
         "contentTypeId": "28",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20250516163426"
       }
     },
@@ -1646,7 +1574,7 @@
         "homepage": "",
         "contentId": "128989",
         "contentTypeId": "12",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20250903170139"
       }
     },
@@ -1718,7 +1646,7 @@
         "homepage": "",
         "contentId": "2781599",
         "contentTypeId": "12",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20250320161602"
       }
     },
@@ -1788,7 +1716,7 @@
         "homepage": "",
         "contentId": "1017568",
         "contentTypeId": "28",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20251028182514"
       }
     },
@@ -1861,7 +1789,7 @@
         "homepage": "",
         "contentId": "2371001",
         "contentTypeId": "14",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20251118185400"
       }
     },
@@ -1934,7 +1862,7 @@
         "homepage": "",
         "contentId": "130826",
         "contentTypeId": "14",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20250523093926"
       }
     },
@@ -2006,7 +1934,7 @@
         "homepage": "",
         "contentId": "2781860",
         "contentTypeId": "12",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20250919154249"
       }
     },
@@ -2079,7 +2007,7 @@
         "homepage": "",
         "contentId": "130827",
         "contentTypeId": "14",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20250522173736"
       }
     },
@@ -2152,7 +2080,7 @@
         "homepage": "",
         "contentId": "130825",
         "contentTypeId": "14",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20251222160059"
       }
     },
@@ -2224,7 +2152,7 @@
         "homepage": "",
         "contentId": "2742316",
         "contentTypeId": "12",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20250919163624"
       }
     },
@@ -2296,7 +2224,7 @@
         "homepage": "",
         "contentId": "2507011",
         "contentTypeId": "14",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20250610111014"
       }
     },
@@ -2366,8 +2294,80 @@
         "homepage": "",
         "contentId": "2610168",
         "contentTypeId": "12",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20250924142714"
+      }
+    },
+    {
+      "id": "tour-2764949",
+      "contentId": "2764949",
+      "contentTypeId": "14",
+      "name": "어린이미술관자란다",
+      "category": "예술 체험",
+      "region": "경기도 파주시",
+      "address": "경기도 파주시 탄현면 새오리로427번길 38-6",
+      "phone": "031-949-6772",
+      "latitude": 37.8179060871,
+      "longitude": 126.6989644458,
+      "distanceKm": 37.6,
+      "indoorOutdoor": "indoor",
+      "cost": "free",
+      "ageBand": "4-10세",
+      "ageMin": 4,
+      "ageMax": 10,
+      "agePolicy": {
+        "admission": {
+          "minAge": 0,
+          "maxAge": null,
+          "label": "공식 연령 제한은 방문 전 확인 필요"
+        },
+        "facility": {
+          "minAge": 4,
+          "maxAge": 10,
+          "label": "나들이톡 권장 4-10세"
+        },
+        "discounts": []
+      },
+      "interests": [
+        "미술",
+        "체험",
+        "관찰"
+      ],
+      "image": "https://tong.visitkorea.or.kr/cms/resource/99/3336999_image2_1.jpg",
+      "imageCredit": "한국관광공사 TourAPI",
+      "rating": null,
+      "hours": "[개인관람] 일요일 10:00~17:00 (예약마감 16:00) ※ 평일은 단체관람만 가능 [단체관람] 월요일~토요일 10:00~17:00 ※ 단체관람은 최소 2주 전 전화 문의 후 예약",
+      "price": "[일반관람] - 어린이 20,000원- 성인 8,000원 ※ 무료 : 15인 이상 단체 인솔교사 1인 / 만 65세 이상 / 국가보훈대상자 및 보호자 1인 / 장애인 및 보호자 1인 [체험관람] 17,000원 ※ 교육프로그램 참여 비용은 별도이며, 각 프로그램에 따라 상이함",
+      "priceRange": {
+        "min": 0,
+        "max": 0,
+        "label": "무료"
+      },
+      "description": "어린이미술관자란다 공식 관광 정보입니다.",
+      "facilities": {
+        "parking": "가능",
+        "stroller": "없음",
+        "nursing": "공식 사이트 확인",
+        "food": "공식 사이트 확인"
+      },
+      "tips": [
+        "방문 전 운영시간 확인",
+        "휴무: 전화 문의",
+        "주차 정보 확인 가능"
+      ],
+      "crowd": "확인 필요",
+      "talkActive": 0,
+      "favoriteCount": 0,
+      "mapX": 13,
+      "mapY": 0,
+      "dataSource": {
+        "provider": "한국관광공사 TourAPI",
+        "url": "https://www.data.go.kr/data/15101578/openapi.do",
+        "homepage": "",
+        "contentId": "2764949",
+        "contentTypeId": "14",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
+        "modifiedAt": "20250324142908"
       }
     },
     {
@@ -2438,7 +2438,7 @@
         "homepage": "",
         "contentId": "2752942",
         "contentTypeId": "12",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20250331112322"
       }
     },
@@ -2508,7 +2508,7 @@
         "homepage": "",
         "contentId": "2814157",
         "contentTypeId": "32",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20251126141532"
       }
     },
@@ -2578,7 +2578,7 @@
         "homepage": "",
         "contentId": "3014805",
         "contentTypeId": "28",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20250625162257"
       }
     },
@@ -2648,7 +2648,7 @@
         "homepage": "",
         "contentId": "2745701",
         "contentTypeId": "28",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20250411171255"
       }
     },
@@ -2718,7 +2718,7 @@
         "homepage": "",
         "contentId": "2747505",
         "contentTypeId": "28",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20250411181110"
       }
     },
@@ -2788,7 +2788,7 @@
         "homepage": "",
         "contentId": "2726664",
         "contentTypeId": "28",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20250410104809"
       }
     },
@@ -2858,7 +2858,7 @@
         "homepage": "",
         "contentId": "2738781",
         "contentTypeId": "28",
-        "fetchedAt": "2026-06-21T20:20:20.992Z",
+        "fetchedAt": "2026-06-28T20:06:26.950Z",
         "modifiedAt": "20250808102658"
       }
     }
