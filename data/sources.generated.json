@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-09T19:24:52.889Z",
+  "generatedAt": "2026-08-16T19:13:48.413Z",
   "sources": [
     {
       "provider": "한국관광공사 TourAPI",
       "url": "https://www.data.go.kr/data/15101578/openapi.do",
       "status": "ok",
-      "count": 0,
+      "count": 40,
       "areaCodes": [
         "1",
         "31",
