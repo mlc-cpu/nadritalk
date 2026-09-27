@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-20T21:07:26.165Z",
+  "generatedAt": "2026-09-27T21:44:11.320Z",
   "source": "한국관광공사 TourAPI",
   "sourceUrl": "https://www.data.go.kr/data/15101578/openapi.do",
   "places": [
@@ -71,7 +71,7 @@
         "homepage": "",
         "contentId": "2773287",
         "contentTypeId": "12",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20251029163143"
       }
     },
@@ -141,7 +141,7 @@
         "homepage": "",
         "contentId": "2854328",
         "contentTypeId": "39",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20250306095827"
       }
     },
@@ -213,7 +213,7 @@
         "homepage": "",
         "contentId": "1105980",
         "contentTypeId": "12",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20250404164219"
       }
     },
@@ -285,7 +285,7 @@
         "homepage": "",
         "contentId": "2733981",
         "contentTypeId": "12",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20250610101223"
       }
     },
@@ -357,7 +357,7 @@
         "homepage": "",
         "contentId": "2753103",
         "contentTypeId": "12",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20250306133844"
       }
     },
@@ -427,7 +427,7 @@
         "homepage": "",
         "contentId": "3384023",
         "contentTypeId": "15",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20251023143000"
       }
     },
@@ -499,7 +499,7 @@
         "homepage": "",
         "contentId": "2756153",
         "contentTypeId": "12",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20250610104436"
       }
     },
@@ -569,7 +569,7 @@
         "homepage": "",
         "contentId": "3082446",
         "contentTypeId": "28",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20250522175506"
       }
     },
@@ -641,7 +641,7 @@
         "homepage": "",
         "contentId": "2451912",
         "contentTypeId": "12",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20250408143951"
       }
     },
@@ -713,7 +713,7 @@
         "homepage": "",
         "contentId": "126499",
         "contentTypeId": "12",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20250718090000"
       }
     },
@@ -785,7 +785,7 @@
         "homepage": "",
         "contentId": "2751331",
         "contentTypeId": "14",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20251127182751"
       }
     },
@@ -858,7 +858,7 @@
         "homepage": "",
         "contentId": "130778",
         "contentTypeId": "14",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20250805162546"
       }
     },
@@ -929,7 +929,7 @@
         "homepage": "",
         "contentId": "3113222",
         "contentTypeId": "15",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20251111133409"
       }
     },
@@ -1001,7 +1001,7 @@
         "homepage": "",
         "contentId": "2762874",
         "contentTypeId": "12",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20250328153740"
       }
     },
@@ -1073,7 +1073,7 @@
         "homepage": "",
         "contentId": "2545920",
         "contentTypeId": "14",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20250415103608"
       }
     },
@@ -1144,7 +1144,7 @@
         "homepage": "",
         "contentId": "3442375",
         "contentTypeId": "12",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20241226110512"
       }
     },
@@ -1216,7 +1216,7 @@
         "homepage": "",
         "contentId": "753850",
         "contentTypeId": "12",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20251117095534"
       }
     },
@@ -1288,7 +1288,7 @@
         "homepage": "",
         "contentId": "2743740",
         "contentTypeId": "12",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20250316120453"
       }
     },
@@ -1360,80 +1360,8 @@
         "homepage": "",
         "contentId": "128989",
         "contentTypeId": "12",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20250903170139"
-      }
-    },
-    {
-      "id": "tour-2781599",
-      "contentId": "2781599",
-      "contentTypeId": "12",
-      "name": "인천어린이천문대",
-      "category": "과학 체험",
-      "region": "인천광역시 검단구",
-      "address": "인천광역시 검단구 원당대로 454-14",
-      "phone": "032-567-3245",
-      "latitude": 37.5904345493,
-      "longitude": 126.6526667493,
-      "distanceKm": 22.8,
-      "indoorOutdoor": "indoor",
-      "cost": "paid",
-      "ageBand": "3-12세",
-      "ageMin": 3,
-      "ageMax": 12,
-      "agePolicy": {
-        "admission": {
-          "minAge": 0,
-          "maxAge": null,
-          "label": "공식 연령 제한은 방문 전 확인 필요"
-        },
-        "facility": {
-          "minAge": 3,
-          "maxAge": 12,
-          "label": "나들이톡 권장 3-12세"
-        },
-        "discounts": []
-      },
-      "interests": [
-        "과학",
-        "실험",
-        "관찰"
-      ],
-      "image": "https://tong.visitkorea.or.kr/cms/resource/16/3395816_image2_1.JPG",
-      "imageCredit": "한국관광공사 TourAPI",
-      "rating": null,
-      "hours": "14:30~24:00 (프로그램별 상이)",
-      "price": "요금 공식 사이트 확인",
-      "priceRange": {
-        "min": 0,
-        "max": 0,
-        "label": "요금 확인 필요"
-      },
-      "description": "인천어린이천문대 공식 관광 정보입니다.",
-      "facilities": {
-        "parking": "가능 요금 (무료)",
-        "stroller": "없음",
-        "nursing": "공식 사이트 확인",
-        "food": "매주 일요일~월요일"
-      },
-      "tips": [
-        "방문 전 운영시간 확인",
-        "휴무: 매주 일요일~월요일",
-        "주차 정보 확인 가능"
-      ],
-      "crowd": "확인 필요",
-      "talkActive": 0,
-      "favoriteCount": 0,
-      "mapX": 7,
-      "mapY": 32,
-      "dataSource": {
-        "provider": "한국관광공사 TourAPI",
-        "url": "https://www.data.go.kr/data/15101578/openapi.do",
-        "homepage": "",
-        "contentId": "2781599",
-        "contentTypeId": "12",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
-        "modifiedAt": "20260630212627"
       }
     },
     {
@@ -1505,7 +1433,7 @@
         "homepage": "",
         "contentId": "2371001",
         "contentTypeId": "14",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20251118185400"
       }
     },
@@ -1578,7 +1506,7 @@
         "homepage": "",
         "contentId": "130826",
         "contentTypeId": "14",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20250523093926"
       }
     },
@@ -1650,7 +1578,7 @@
         "homepage": "",
         "contentId": "2781860",
         "contentTypeId": "12",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20250919154249"
       }
     },
@@ -1723,7 +1651,7 @@
         "homepage": "",
         "contentId": "130827",
         "contentTypeId": "14",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20250522173736"
       }
     },
@@ -1796,7 +1724,7 @@
         "homepage": "",
         "contentId": "130825",
         "contentTypeId": "14",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20251222160059"
       }
     },
@@ -1868,7 +1796,7 @@
         "homepage": "",
         "contentId": "2742316",
         "contentTypeId": "12",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20250919163624"
       }
     },
@@ -1938,7 +1866,7 @@
         "homepage": "",
         "contentId": "2610168",
         "contentTypeId": "12",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20250924142714"
       }
     },
@@ -2010,7 +1938,7 @@
         "homepage": "",
         "contentId": "130570",
         "contentTypeId": "14",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20250731164724"
       }
     },
@@ -2082,7 +2010,7 @@
         "homepage": "",
         "contentId": "2764949",
         "contentTypeId": "14",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20250324142908"
       }
     },
@@ -2154,7 +2082,7 @@
         "homepage": "",
         "contentId": "2752942",
         "contentTypeId": "12",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20250331112322"
       }
     },
@@ -2224,8 +2152,78 @@
         "homepage": "",
         "contentId": "2738718",
         "contentTypeId": "28",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20250513155541"
+      }
+    },
+    {
+      "id": "tour-2731145",
+      "contentId": "2731145",
+      "contentTypeId": "28",
+      "name": "왕산가족오토캠핑장",
+      "category": "가족 나들이",
+      "region": "인천광역시 영종구",
+      "address": "인천광역시 영종구 용유서로423번길 60 (을왕동)",
+      "phone": "확인 필요",
+      "latitude": 37.4582032371,
+      "longitude": 126.3662160311,
+      "distanceKm": 47.1,
+      "indoorOutdoor": "indoor",
+      "cost": "paid",
+      "ageBand": "3-12세",
+      "ageMin": 3,
+      "ageMax": 12,
+      "agePolicy": {
+        "admission": {
+          "minAge": 0,
+          "maxAge": null,
+          "label": "공식 연령 제한은 방문 전 확인 필요"
+        },
+        "facility": {
+          "minAge": 3,
+          "maxAge": 12,
+          "label": "나들이톡 권장 3-12세"
+        },
+        "discounts": []
+      },
+      "interests": [
+        "체험",
+        "휴식",
+        "관찰"
+      ],
+      "image": "https://tong.visitkorea.or.kr/cms/resource/00/2731500_image2_1.jpg",
+      "imageCredit": "한국관광공사 TourAPI",
+      "rating": null,
+      "hours": "운영 시간 공식 사이트 확인",
+      "price": "요금 공식 사이트 확인",
+      "priceRange": {
+        "min": 0,
+        "max": 0,
+        "label": "요금 확인 필요"
+      },
+      "description": "왕산가족오토캠핑장 공식 관광 정보입니다.",
+      "facilities": {
+        "parking": "공식 사이트 확인",
+        "stroller": "공식 사이트 확인",
+        "nursing": "공식 사이트 확인",
+        "food": "공식 사이트 확인"
+      },
+      "tips": [
+        "방문 전 운영시간 확인"
+      ],
+      "crowd": "확인 필요",
+      "talkActive": 0,
+      "favoriteCount": 0,
+      "mapX": 0,
+      "mapY": 58,
+      "dataSource": {
+        "provider": "한국관광공사 TourAPI",
+        "url": "https://www.data.go.kr/data/15101578/openapi.do",
+        "homepage": "",
+        "contentId": "2731145",
+        "contentTypeId": "28",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
+        "modifiedAt": "20260630184428"
       }
     },
     {
@@ -2297,7 +2295,7 @@
         "homepage": "",
         "contentId": "2575905",
         "contentTypeId": "12",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20250408123127"
       }
     },
@@ -2367,7 +2365,7 @@
         "homepage": "",
         "contentId": "2814157",
         "contentTypeId": "32",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20251126141532"
       }
     },
@@ -2437,7 +2435,7 @@
         "homepage": "",
         "contentId": "3014805",
         "contentTypeId": "28",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20250625162257"
       }
     },
@@ -2507,7 +2505,7 @@
         "homepage": "",
         "contentId": "2747505",
         "contentTypeId": "28",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20250411181110"
       }
     },
@@ -2579,7 +2577,7 @@
         "homepage": "",
         "contentId": "127613",
         "contentTypeId": "12",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20250320094339"
       }
     },
@@ -2649,7 +2647,7 @@
         "homepage": "",
         "contentId": "3532768",
         "contentTypeId": "32",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20251023143000"
       }
     },
@@ -2719,7 +2717,7 @@
         "homepage": "",
         "contentId": "2726664",
         "contentTypeId": "28",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20250410104809"
       }
     },
@@ -2789,7 +2787,7 @@
         "homepage": "",
         "contentId": "2752054",
         "contentTypeId": "28",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20250819092142"
       }
     },
@@ -2859,7 +2857,7 @@
         "homepage": "",
         "contentId": "2738781",
         "contentTypeId": "28",
-        "fetchedAt": "2026-09-20T21:07:26.165Z",
+        "fetchedAt": "2026-09-27T21:44:11.320Z",
         "modifiedAt": "20250808102658"
       }
     }
