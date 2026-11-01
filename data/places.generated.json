@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T21:18:28.871Z",
+  "generatedAt": "2026-11-01T22:31:20.297Z",
   "source": "한국관광공사 TourAPI",
   "sourceUrl": "https://www.data.go.kr/data/15101578/openapi.do",
   "places": [
@@ -71,7 +71,7 @@
         "homepage": "",
         "contentId": "2773287",
         "contentTypeId": "12",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20251029163143"
       }
     },
@@ -141,7 +141,7 @@
         "homepage": "",
         "contentId": "2611575",
         "contentTypeId": "12",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20250407100812"
       }
     },
@@ -213,7 +213,7 @@
         "homepage": "",
         "contentId": "2733981",
         "contentTypeId": "12",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20250610101223"
       }
     },
@@ -285,22 +285,22 @@
         "homepage": "",
         "contentId": "2753103",
         "contentTypeId": "12",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20250306133844"
       }
     },
     {
-      "id": "tour-2756153",
-      "contentId": "2756153",
+      "id": "tour-1059479",
+      "contentId": "1059479",
       "contentTypeId": "12",
-      "name": "쌈지 어린이공원",
+      "name": "여의도한강공원",
       "category": "야외 공원",
-      "region": "서울특별시 금천구",
-      "address": "서울특별시 금천구 독산로76길 47",
-      "phone": "금천구 공원녹지과 02-2627-1654",
-      "latitude": 37.4702973029,
-      "longitude": 126.8970561551,
-      "distanceKm": 5.2,
+      "region": "서울특별시 영등포구",
+      "address": "서울특별시 영등포구 여의동로 330 (여의도동)",
+      "phone": "02-3780-0561~6",
+      "latitude": 37.5263997727,
+      "longitude": 126.9336095794,
+      "distanceKm": 3.6,
       "indoorOutdoor": "outdoor",
       "cost": "paid",
       "ageBand": "3-12세",
@@ -324,7 +324,7 @@
         "산책",
         "야외놀이"
       ],
-      "image": "https://tong.visitkorea.or.kr/cms/resource/29/3468029_image2_1.jpg",
+      "image": "https://tong.visitkorea.or.kr/cms/resource/89/3544389_image2_1.jpg",
       "imageCredit": "한국관광공사 TourAPI",
       "rating": null,
       "hours": "상시 개방",
@@ -334,10 +334,10 @@
         "max": 0,
         "label": "요금 확인 필요"
       },
-      "description": "쌈지 어린이공원 공식 관광 정보입니다.",
+      "description": "여의도한강공원 공식 관광 정보입니다.",
       "facilities": {
-        "parking": "불가능",
-        "stroller": "없음",
+        "parking": "가능 (1,782대)",
+        "stroller": "공식 사이트 확인",
         "nursing": "공식 사이트 확인",
         "food": "연중무휴"
       },
@@ -349,16 +349,16 @@
       "crowd": "확인 필요",
       "talkActive": 0,
       "favoriteCount": 0,
-      "mapX": 40,
-      "mapY": 56,
+      "mapX": 44,
+      "mapY": 45,
       "dataSource": {
         "provider": "한국관광공사 TourAPI",
         "url": "https://www.data.go.kr/data/15101578/openapi.do",
         "homepage": "",
-        "contentId": "2756153",
+        "contentId": "1059479",
         "contentTypeId": "12",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
-        "modifiedAt": "20250610104436"
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "modifiedAt": "20251212091131"
       }
     },
     {
@@ -429,8 +429,152 @@
         "homepage": "",
         "contentId": "126499",
         "contentTypeId": "12",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20250718090000"
+      }
+    },
+    {
+      "id": "tour-128622",
+      "contentId": "128622",
+      "contentTypeId": "12",
+      "name": "서대문독립공원",
+      "category": "야외 공원",
+      "region": "서울특별시 서대문구",
+      "address": "서울특별시 서대문구 통일로 251 (현저동)",
+      "phone": "02-3140-8305",
+      "latitude": 37.5746723659,
+      "longitude": 126.9573421635,
+      "distanceKm": 8.5,
+      "indoorOutdoor": "outdoor",
+      "cost": "paid",
+      "ageBand": "3-12세",
+      "ageMin": 3,
+      "ageMax": 12,
+      "agePolicy": {
+        "admission": {
+          "minAge": 0,
+          "maxAge": null,
+          "label": "공식 연령 제한은 방문 전 확인 필요"
+        },
+        "facility": {
+          "minAge": 3,
+          "maxAge": 12,
+          "label": "나들이톡 권장 3-12세"
+        },
+        "discounts": []
+      },
+      "interests": [
+        "자연",
+        "산책",
+        "야외놀이"
+      ],
+      "image": "https://tong.visitkorea.or.kr/cms/resource/05/3590405_image2_1.jpg",
+      "imageCredit": "한국관광공사 TourAPI",
+      "rating": null,
+      "hours": "상시 개방",
+      "price": "요금 공식 사이트 확인",
+      "priceRange": {
+        "min": 0,
+        "max": 0,
+        "label": "요금 확인 필요"
+      },
+      "description": "서대문독립공원 공식 관광 정보입니다.",
+      "facilities": {
+        "parking": "가능",
+        "stroller": "공식 사이트 확인",
+        "nursing": "공식 사이트 확인",
+        "food": "연중무휴"
+      },
+      "tips": [
+        "방문 전 운영시간 확인",
+        "휴무: 연중무휴",
+        "주차 정보 확인 가능"
+      ],
+      "crowd": "확인 필요",
+      "talkActive": 0,
+      "favoriteCount": 0,
+      "mapX": 48,
+      "mapY": 35,
+      "dataSource": {
+        "provider": "한국관광공사 TourAPI",
+        "url": "https://www.data.go.kr/data/15101578/openapi.do",
+        "homepage": "",
+        "contentId": "128622",
+        "contentTypeId": "12",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "modifiedAt": "20251231104650"
+      }
+    },
+    {
+      "id": "tour-127942",
+      "contentId": "127942",
+      "contentTypeId": "12",
+      "name": "사직공원(서울)",
+      "category": "야외 공원",
+      "region": "서울특별시 종로구",
+      "address": "서울특별시 종로구 사직로 89 (사직동)",
+      "phone": "종로구청 공원조성팀 02-2148-2836",
+      "latitude": 37.5758446558,
+      "longitude": 126.9687216489,
+      "distanceKm": 9.2,
+      "indoorOutdoor": "outdoor",
+      "cost": "paid",
+      "ageBand": "3-12세",
+      "ageMin": 3,
+      "ageMax": 12,
+      "agePolicy": {
+        "admission": {
+          "minAge": 0,
+          "maxAge": null,
+          "label": "공식 연령 제한은 방문 전 확인 필요"
+        },
+        "facility": {
+          "minAge": 3,
+          "maxAge": 12,
+          "label": "나들이톡 권장 3-12세"
+        },
+        "discounts": []
+      },
+      "interests": [
+        "자연",
+        "산책",
+        "야외놀이"
+      ],
+      "image": "https://tong.visitkorea.or.kr/cms/resource/83/3400583_image2_1.JPG",
+      "imageCredit": "한국관광공사 TourAPI",
+      "rating": null,
+      "hours": "상시 개방",
+      "price": "요금 공식 사이트 확인",
+      "priceRange": {
+        "min": 0,
+        "max": 0,
+        "label": "요금 확인 필요"
+      },
+      "description": "사직공원(서울) 공식 관광 정보입니다.",
+      "facilities": {
+        "parking": "가능",
+        "stroller": "공식 사이트 확인",
+        "nursing": "공식 사이트 확인",
+        "food": "연중무휴"
+      },
+      "tips": [
+        "방문 전 운영시간 확인",
+        "휴무: 연중무휴",
+        "주차 정보 확인 가능"
+      ],
+      "crowd": "확인 필요",
+      "talkActive": 0,
+      "favoriteCount": 0,
+      "mapX": 49,
+      "mapY": 35,
+      "dataSource": {
+        "provider": "한국관광공사 TourAPI",
+        "url": "https://www.data.go.kr/data/15101578/openapi.do",
+        "homepage": "",
+        "contentId": "127942",
+        "contentTypeId": "12",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "modifiedAt": "20251224093703"
       }
     },
     {
@@ -501,8 +645,79 @@
         "homepage": "",
         "contentId": "3012716",
         "contentTypeId": "14",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20251023143000"
+      }
+    },
+    {
+      "id": "tour-2752545",
+      "contentId": "2752545",
+      "contentTypeId": "12",
+      "name": "역삼개나리공원",
+      "category": "야외 공원",
+      "region": "서울특별시 강남구",
+      "address": "서울특별시 강남구 논현로79길 24 (역삼동)",
+      "phone": "강남구청 공원녹지과 02-3423-6248",
+      "latitude": 37.4976466191,
+      "longitude": 127.0362843748,
+      "distanceKm": 12.7,
+      "indoorOutdoor": "outdoor",
+      "cost": "paid",
+      "ageBand": "3-12세",
+      "ageMin": 3,
+      "ageMax": 12,
+      "agePolicy": {
+        "admission": {
+          "minAge": 0,
+          "maxAge": null,
+          "label": "공식 연령 제한은 방문 전 확인 필요"
+        },
+        "facility": {
+          "minAge": 3,
+          "maxAge": 12,
+          "label": "나들이톡 권장 3-12세"
+        },
+        "discounts": []
+      },
+      "interests": [
+        "자연",
+        "산책",
+        "야외놀이"
+      ],
+      "image": "https://tong.visitkorea.or.kr/cms/resource/86/3463086_image2_1.jpg",
+      "imageCredit": "한국관광공사 TourAPI",
+      "rating": null,
+      "hours": "상시 개방",
+      "price": "요금 공식 사이트 확인",
+      "priceRange": {
+        "min": 0,
+        "max": 0,
+        "label": "요금 확인 필요"
+      },
+      "description": "역삼개나리공원 공식 관광 정보입니다.",
+      "facilities": {
+        "parking": "공식 사이트 확인",
+        "stroller": "공식 사이트 확인",
+        "nursing": "공식 사이트 확인",
+        "food": "연중무휴"
+      },
+      "tips": [
+        "방문 전 운영시간 확인",
+        "휴무: 연중무휴"
+      ],
+      "crowd": "확인 필요",
+      "talkActive": 0,
+      "favoriteCount": 0,
+      "mapX": 58,
+      "mapY": 50,
+      "dataSource": {
+        "provider": "한국관광공사 TourAPI",
+        "url": "https://www.data.go.kr/data/15101578/openapi.do",
+        "homepage": "",
+        "contentId": "2752545",
+        "contentTypeId": "12",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "modifiedAt": "20251223133624"
       }
     },
     {
@@ -572,7 +787,7 @@
         "homepage": "",
         "contentId": "3442375",
         "contentTypeId": "12",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20241226110512"
       }
     },
@@ -643,7 +858,7 @@
         "homepage": "",
         "contentId": "3080852",
         "contentTypeId": "14",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20251103113539"
       }
     },
@@ -716,7 +931,7 @@
         "homepage": "",
         "contentId": "2747797",
         "contentTypeId": "12",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20250730133742"
       }
     },
@@ -788,23 +1003,23 @@
         "homepage": "",
         "contentId": "753850",
         "contentTypeId": "12",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20251117095534"
       }
     },
     {
-      "id": "tour-2743740",
-      "contentId": "2743740",
+      "id": "tour-1602451",
+      "contentId": "1602451",
       "contentTypeId": "12",
-      "name": "육영재단 어린이회관",
-      "category": "가족 나들이",
-      "region": "서울특별시 광진구",
-      "address": "서울특별시 광진구 광나루로 441",
-      "phone": "02-2204-6028",
-      "latitude": 37.5470527467,
-      "longitude": 127.0781902704,
-      "distanceKm": 16.5,
-      "indoorOutdoor": "indoor",
+      "name": "대모산도시자연공원",
+      "category": "야외 공원",
+      "region": "서울특별시 강남구",
+      "address": "서울특별시 강남구 일원동 산63-52",
+      "phone": "강남구청 공원녹지과 02-3423-6283",
+      "latitude": 37.4800522436,
+      "longitude": 127.081014136,
+      "distanceKm": 17,
+      "indoorOutdoor": "outdoor",
       "cost": "paid",
       "ageBand": "3-12세",
       "ageMin": 3,
@@ -823,45 +1038,45 @@
         "discounts": []
       },
       "interests": [
-        "체험",
-        "휴식",
-        "관찰"
+        "자연",
+        "산책",
+        "야외놀이"
       ],
-      "image": "https://tong.visitkorea.or.kr/cms/resource/37/3393937_image2_1.JPG",
+      "image": "https://tong.visitkorea.or.kr/cms/resource/45/3589845_image2_1.jpg",
       "imageCredit": "한국관광공사 TourAPI",
       "rating": null,
-      "hours": "09:00~18:00",
+      "hours": "상시 개방",
       "price": "요금 공식 사이트 확인",
       "priceRange": {
         "min": 0,
         "max": 0,
         "label": "요금 확인 필요"
       },
-      "description": "육영재단 어린이회관 공식 관광 정보입니다.",
+      "description": "대모산도시자연공원 공식 관광 정보입니다.",
       "facilities": {
         "parking": "가능",
-        "stroller": "없음",
+        "stroller": "공식 사이트 확인",
         "nursing": "공식 사이트 확인",
-        "food": "매주 토요일, 일요일"
+        "food": "연중무휴"
       },
       "tips": [
         "방문 전 운영시간 확인",
-        "휴무: 매주 토요일, 일요일",
+        "휴무: 연중무휴",
         "주차 정보 확인 가능"
       ],
       "crowd": "확인 필요",
       "talkActive": 0,
       "favoriteCount": 0,
       "mapX": 64,
-      "mapY": 41,
+      "mapY": 54,
       "dataSource": {
         "provider": "한국관광공사 TourAPI",
         "url": "https://www.data.go.kr/data/15101578/openapi.do",
         "homepage": "",
-        "contentId": "2743740",
+        "contentId": "1602451",
         "contentTypeId": "12",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
-        "modifiedAt": "20250316120453"
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "modifiedAt": "20251230171206"
       }
     },
     {
@@ -931,81 +1146,8 @@
         "homepage": "",
         "contentId": "3447439",
         "contentTypeId": "12",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20250730084427"
-      }
-    },
-    {
-      "id": "tour-130826",
-      "contentId": "130826",
-      "contentTypeId": "14",
-      "name": "슬기샘어린이도서관",
-      "category": "가족 나들이",
-      "region": "경기도 수원시",
-      "address": "경기도 수원시 장안구 송정로 9 (송죽동)",
-      "phone": "031-242-6633",
-      "latitude": 37.2976274856,
-      "longitude": 126.9991267118,
-      "distanceKm": 26.1,
-      "indoorOutdoor": "indoor",
-      "cost": "free",
-      "ageBand": "3-12세",
-      "ageMin": 3,
-      "ageMax": 12,
-      "agePolicy": {
-        "admission": {
-          "minAge": 0,
-          "maxAge": null,
-          "label": "공식 연령 제한은 방문 전 확인 필요"
-        },
-        "facility": {
-          "minAge": 3,
-          "maxAge": 12,
-          "label": "나들이톡 권장 3-12세"
-        },
-        "discounts": []
-      },
-      "interests": [
-        "체험",
-        "휴식",
-        "관찰",
-        "독서"
-      ],
-      "image": "https://tong.visitkorea.or.kr/cms/resource/56/3057856_image2_1.JPG",
-      "imageCredit": "한국관광공사 TourAPI",
-      "rating": null,
-      "hours": "09:00~18:00",
-      "price": "무료",
-      "priceRange": {
-        "min": 0,
-        "max": 0,
-        "label": "무료"
-      },
-      "description": "슬기샘어린이도서관 공식 관광 정보입니다.",
-      "facilities": {
-        "parking": "가능",
-        "stroller": "없음",
-        "nursing": "공식 사이트 확인",
-        "food": "공식 사이트 확인"
-      },
-      "tips": [
-        "방문 전 운영시간 확인",
-        "휴무: 매주 월요일 / 공휴일",
-        "주차 정보 확인 가능"
-      ],
-      "crowd": "확인 필요",
-      "talkActive": 0,
-      "favoriteCount": 0,
-      "mapX": 53,
-      "mapY": 90,
-      "dataSource": {
-        "provider": "한국관광공사 TourAPI",
-        "url": "https://www.data.go.kr/data/15101578/openapi.do",
-        "homepage": "",
-        "contentId": "130826",
-        "contentTypeId": "14",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
-        "modifiedAt": "20250523093926"
       }
     },
     {
@@ -1076,226 +1218,8 @@
         "homepage": "",
         "contentId": "982142",
         "contentTypeId": "12",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20250321175935"
-      }
-    },
-    {
-      "id": "tour-130827",
-      "contentId": "130827",
-      "contentTypeId": "14",
-      "name": "바른샘어린이도서관",
-      "category": "가족 나들이",
-      "region": "경기도 수원시",
-      "address": "경기도 수원시 영통구 매봉로 10 (매탄동)",
-      "phone": "031-216-9933",
-      "latitude": 37.2689067635,
-      "longitude": 127.0523865699,
-      "distanceKm": 30.9,
-      "indoorOutdoor": "indoor",
-      "cost": "free",
-      "ageBand": "3-12세",
-      "ageMin": 3,
-      "ageMax": 12,
-      "agePolicy": {
-        "admission": {
-          "minAge": 0,
-          "maxAge": null,
-          "label": "공식 연령 제한은 방문 전 확인 필요"
-        },
-        "facility": {
-          "minAge": 3,
-          "maxAge": 12,
-          "label": "나들이톡 권장 3-12세"
-        },
-        "discounts": []
-      },
-      "interests": [
-        "체험",
-        "휴식",
-        "관찰",
-        "독서"
-      ],
-      "image": "https://tong.visitkorea.or.kr/cms/resource/97/3475897_image2_1.JPG",
-      "imageCredit": "한국관광공사 TourAPI",
-      "rating": null,
-      "hours": "09:00~18:00",
-      "price": "무료",
-      "priceRange": {
-        "min": 0,
-        "max": 0,
-        "label": "무료"
-      },
-      "description": "바른샘어린이도서관 공식 관광 정보입니다.",
-      "facilities": {
-        "parking": "가능 요금 (무료)",
-        "stroller": "없음",
-        "nursing": "공식 사이트 확인",
-        "food": "공식 사이트 확인"
-      },
-      "tips": [
-        "방문 전 운영시간 확인",
-        "휴무: 매주 월요일 / 공휴일",
-        "주차 정보 확인 가능"
-      ],
-      "crowd": "확인 필요",
-      "talkActive": 0,
-      "favoriteCount": 0,
-      "mapX": 60,
-      "mapY": 96,
-      "dataSource": {
-        "provider": "한국관광공사 TourAPI",
-        "url": "https://www.data.go.kr/data/15101578/openapi.do",
-        "homepage": "",
-        "contentId": "130827",
-        "contentTypeId": "14",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
-        "modifiedAt": "20250522173736"
-      }
-    },
-    {
-      "id": "tour-130825",
-      "contentId": "130825",
-      "contentTypeId": "14",
-      "name": "지혜샘어린이도서관",
-      "category": "가족 나들이",
-      "region": "경기도 수원시",
-      "address": "경기도 수원시 권선구 동탄원천로 818 (권선동)",
-      "phone": "031-225-5566",
-      "latitude": 37.2481339456,
-      "longitude": 127.0399243928,
-      "distanceKm": 32.6,
-      "indoorOutdoor": "indoor",
-      "cost": "free",
-      "ageBand": "3-12세",
-      "ageMin": 3,
-      "ageMax": 12,
-      "agePolicy": {
-        "admission": {
-          "minAge": 0,
-          "maxAge": null,
-          "label": "공식 연령 제한은 방문 전 확인 필요"
-        },
-        "facility": {
-          "minAge": 3,
-          "maxAge": 12,
-          "label": "나들이톡 권장 3-12세"
-        },
-        "discounts": []
-      },
-      "interests": [
-        "체험",
-        "휴식",
-        "관찰",
-        "독서"
-      ],
-      "image": "https://tong.visitkorea.or.kr/cms/resource/35/3584735_image2_1.jpg",
-      "imageCredit": "한국관광공사 TourAPI",
-      "rating": null,
-      "hours": "09:00~18:00",
-      "price": "무료",
-      "priceRange": {
-        "min": 0,
-        "max": 0,
-        "label": "무료"
-      },
-      "description": "지혜샘어린이도서관 공식 관광 정보입니다.",
-      "facilities": {
-        "parking": "가능",
-        "stroller": "공식 사이트 확인",
-        "nursing": "공식 사이트 확인",
-        "food": "공식 사이트 확인"
-      },
-      "tips": [
-        "방문 전 운영시간 확인",
-        "휴무: 매주 월요일 / 국가지정 공휴일(일요일은 타 국가지정 공휴일과 중복시 휴관)",
-        "주차 정보 확인 가능"
-      ],
-      "crowd": "확인 필요",
-      "talkActive": 0,
-      "favoriteCount": 0,
-      "mapX": 59,
-      "mapY": 100,
-      "dataSource": {
-        "provider": "한국관광공사 TourAPI",
-        "url": "https://www.data.go.kr/data/15101578/openapi.do",
-        "homepage": "",
-        "contentId": "130825",
-        "contentTypeId": "14",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
-        "modifiedAt": "20251222160059"
-      }
-    },
-    {
-      "id": "tour-2742316",
-      "contentId": "2742316",
-      "contentTypeId": "12",
-      "name": "수원어린이교통공원",
-      "category": "야외 공원",
-      "region": "경기도 수원시",
-      "address": "경기도 수원시 영통구 덕영대로 1570 (영통동)",
-      "phone": "031-202-0386",
-      "latitude": 37.2454541083,
-      "longitude": 127.0627835053,
-      "distanceKm": 33.7,
-      "indoorOutdoor": "outdoor",
-      "cost": "paid",
-      "ageBand": "3-12세",
-      "ageMin": 3,
-      "ageMax": 12,
-      "agePolicy": {
-        "admission": {
-          "minAge": 0,
-          "maxAge": null,
-          "label": "공식 연령 제한은 방문 전 확인 필요"
-        },
-        "facility": {
-          "minAge": 3,
-          "maxAge": 12,
-          "label": "나들이톡 권장 3-12세"
-        },
-        "discounts": []
-      },
-      "interests": [
-        "자연",
-        "산책",
-        "야외놀이"
-      ],
-      "image": "https://tong.visitkorea.or.kr/cms/resource/17/3539217_image2_1.jpg",
-      "imageCredit": "한국관광공사 TourAPI",
-      "rating": null,
-      "hours": "상시 개방",
-      "price": "요금 공식 사이트 확인",
-      "priceRange": {
-        "min": 0,
-        "max": 0,
-        "label": "요금 확인 필요"
-      },
-      "description": "수원어린이교통공원 공식 관광 정보입니다.",
-      "facilities": {
-        "parking": "가능",
-        "stroller": "공식 사이트 확인",
-        "nursing": "공식 사이트 확인",
-        "food": "연중무휴"
-      },
-      "tips": [
-        "방문 전 운영시간 확인",
-        "휴무: 연중무휴",
-        "주차 정보 확인 가능"
-      ],
-      "crowd": "확인 필요",
-      "talkActive": 0,
-      "favoriteCount": 0,
-      "mapX": 62,
-      "mapY": 100,
-      "dataSource": {
-        "provider": "한국관광공사 TourAPI",
-        "url": "https://www.data.go.kr/data/15101578/openapi.do",
-        "homepage": "",
-        "contentId": "2742316",
-        "contentTypeId": "12",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
-        "modifiedAt": "20250919163624"
       }
     },
     {
@@ -1366,7 +1290,7 @@
         "homepage": "",
         "contentId": "130570",
         "contentTypeId": "14",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20250731164724"
       }
     },
@@ -1437,7 +1361,7 @@
         "homepage": "",
         "contentId": "3455504",
         "contentTypeId": "12",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20241222223619"
       }
     },
@@ -1509,7 +1433,7 @@
         "homepage": "",
         "contentId": "128599",
         "contentTypeId": "12",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20250319094850"
       }
     },
@@ -1581,7 +1505,7 @@
         "homepage": "",
         "contentId": "129018",
         "contentTypeId": "12",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20250905131417"
       }
     },
@@ -1651,7 +1575,7 @@
         "homepage": "",
         "contentId": "2738718",
         "contentTypeId": "28",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20250513155541"
       }
     },
@@ -1723,7 +1647,7 @@
         "homepage": "",
         "contentId": "2732148",
         "contentTypeId": "14",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20250108142426"
       }
     },
@@ -1793,7 +1717,7 @@
         "homepage": "",
         "contentId": "2961651",
         "contentTypeId": "25",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20230510193522"
       }
     },
@@ -1865,7 +1789,7 @@
         "homepage": "",
         "contentId": "128601",
         "contentTypeId": "12",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20260630184428"
       }
     },
@@ -1937,7 +1861,7 @@
         "homepage": "",
         "contentId": "2737291",
         "contentTypeId": "12",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20250923171740"
       }
     },
@@ -2009,7 +1933,7 @@
         "homepage": "",
         "contentId": "129410",
         "contentTypeId": "12",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20251030103514"
       }
     },
@@ -2079,7 +2003,7 @@
         "homepage": "",
         "contentId": "2755756",
         "contentTypeId": "28",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20251106143231"
       }
     },
@@ -2151,7 +2075,7 @@
         "homepage": "",
         "contentId": "128916",
         "contentTypeId": "12",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20251023143000"
       }
     },
@@ -2223,7 +2147,7 @@
         "homepage": "",
         "contentId": "2599177",
         "contentTypeId": "12",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20250708110920"
       }
     },
@@ -2293,7 +2217,7 @@
         "homepage": "",
         "contentId": "2733099",
         "contentTypeId": "12",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20250827181914"
       }
     },
@@ -2365,7 +2289,7 @@
         "homepage": "",
         "contentId": "1553067",
         "contentTypeId": "12",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20250319165707"
       }
     },
@@ -2437,7 +2361,7 @@
         "homepage": "",
         "contentId": "127613",
         "contentTypeId": "12",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20250320094339"
       }
     },
@@ -2507,7 +2431,7 @@
         "homepage": "",
         "contentId": "3532768",
         "contentTypeId": "32",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20251023143000"
       }
     },
@@ -2577,7 +2501,7 @@
         "homepage": "",
         "contentId": "2726664",
         "contentTypeId": "28",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20250410104809"
       }
     },
@@ -2647,7 +2571,7 @@
         "homepage": "",
         "contentId": "2752054",
         "contentTypeId": "28",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20250819092142"
       }
     },
@@ -2717,8 +2641,80 @@
         "homepage": "",
         "contentId": "2738781",
         "contentTypeId": "28",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20250808102658"
+      }
+    },
+    {
+      "id": "tour-2611568",
+      "contentId": "2611568",
+      "contentTypeId": "12",
+      "name": "계남근린공원",
+      "category": "야외 공원",
+      "region": "서울특별시 양천구",
+      "address": "서울특별시 양천구 중앙로17길 21 (신정동)",
+      "phone": "양천구청 공원녹지과 02-2620-3576",
+      "latitude": 19.69442748,
+      "longitude": 117.9925662504,
+      "distanceKm": 2161.2,
+      "indoorOutdoor": "outdoor",
+      "cost": "paid",
+      "ageBand": "3-12세",
+      "ageMin": 3,
+      "ageMax": 12,
+      "agePolicy": {
+        "admission": {
+          "minAge": 0,
+          "maxAge": null,
+          "label": "공식 연령 제한은 방문 전 확인 필요"
+        },
+        "facility": {
+          "minAge": 3,
+          "maxAge": 12,
+          "label": "나들이톡 권장 3-12세"
+        },
+        "discounts": []
+      },
+      "interests": [
+        "자연",
+        "산책",
+        "야외놀이"
+      ],
+      "image": "https://tong.visitkorea.or.kr/cms/resource/26/3568226_image2_1.jpg",
+      "imageCredit": "한국관광공사 TourAPI",
+      "rating": null,
+      "hours": "상시 개방",
+      "price": "요금 공식 사이트 확인",
+      "priceRange": {
+        "min": 0,
+        "max": 0,
+        "label": "요금 확인 필요"
+      },
+      "description": "계남근린공원 공식 관광 정보입니다.",
+      "facilities": {
+        "parking": "불가능",
+        "stroller": "공식 사이트 확인",
+        "nursing": "공식 사이트 확인",
+        "food": "연중무휴"
+      },
+      "tips": [
+        "방문 전 운영시간 확인",
+        "휴무: 연중무휴",
+        "주차 정보 확인 가능"
+      ],
+      "crowd": "확인 필요",
+      "talkActive": 0,
+      "favoriteCount": 0,
+      "mapX": 0,
+      "mapY": 100,
+      "dataSource": {
+        "provider": "한국관광공사 TourAPI",
+        "url": "https://www.data.go.kr/data/15101578/openapi.do",
+        "homepage": "",
+        "contentId": "2611568",
+        "contentTypeId": "12",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "modifiedAt": "20251204152044"
       }
     },
     {
@@ -2788,7 +2784,7 @@
         "homepage": "",
         "contentId": "3456754",
         "contentTypeId": "12",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20241222193911"
       }
     },
@@ -2860,7 +2856,7 @@
         "homepage": "",
         "contentId": "2767868",
         "contentTypeId": "14",
-        "fetchedAt": "2026-10-25T21:18:28.871Z",
+        "fetchedAt": "2026-11-01T22:31:20.297Z",
         "modifiedAt": "20250327152652"
       }
     }
