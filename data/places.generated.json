@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T22:31:20.297Z",
+  "generatedAt": "2026-11-08T22:35:37.990Z",
   "source": "한국관광공사 TourAPI",
   "sourceUrl": "https://www.data.go.kr/data/15101578/openapi.do",
   "places": [
@@ -71,7 +71,7 @@
         "homepage": "",
         "contentId": "2773287",
         "contentTypeId": "12",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
         "modifiedAt": "20251029163143"
       }
     },
@@ -141,152 +141,8 @@
         "homepage": "",
         "contentId": "2611575",
         "contentTypeId": "12",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
         "modifiedAt": "20250407100812"
-      }
-    },
-    {
-      "id": "tour-2733981",
-      "contentId": "2733981",
-      "contentTypeId": "12",
-      "name": "구로리어린이공원",
-      "category": "야외 공원",
-      "region": "서울특별시 구로구",
-      "address": "서울특별시 구로구 구로중앙로 13 (구로동)",
-      "phone": "구로구 공원녹지과 02-860-2396",
-      "latitude": 37.4914308667,
-      "longitude": 126.8918449243,
-      "distanceKm": 2.9,
-      "indoorOutdoor": "outdoor",
-      "cost": "paid",
-      "ageBand": "3-12세",
-      "ageMin": 3,
-      "ageMax": 12,
-      "agePolicy": {
-        "admission": {
-          "minAge": 0,
-          "maxAge": null,
-          "label": "공식 연령 제한은 방문 전 확인 필요"
-        },
-        "facility": {
-          "minAge": 3,
-          "maxAge": 12,
-          "label": "나들이톡 권장 3-12세"
-        },
-        "discounts": []
-      },
-      "interests": [
-        "자연",
-        "산책",
-        "야외놀이"
-      ],
-      "image": "https://tong.visitkorea.or.kr/cms/resource/43/3468043_image2_1.jpg",
-      "imageCredit": "한국관광공사 TourAPI",
-      "rating": null,
-      "hours": "- 동절기(11월~2월) 09:00~18:00 - 하절기(3월~10월) 09:00~20:00",
-      "price": "요금 공식 사이트 확인",
-      "priceRange": {
-        "min": 0,
-        "max": 0,
-        "label": "요금 확인 필요"
-      },
-      "description": "구로리어린이공원 공식 관광 정보입니다.",
-      "facilities": {
-        "parking": "가능",
-        "stroller": "없음",
-        "nursing": "공식 사이트 확인",
-        "food": "연중무휴"
-      },
-      "tips": [
-        "방문 전 운영시간 확인",
-        "휴무: 연중무휴",
-        "주차 정보 확인 가능"
-      ],
-      "crowd": "확인 필요",
-      "talkActive": 0,
-      "favoriteCount": 0,
-      "mapX": 39,
-      "mapY": 52,
-      "dataSource": {
-        "provider": "한국관광공사 TourAPI",
-        "url": "https://www.data.go.kr/data/15101578/openapi.do",
-        "homepage": "",
-        "contentId": "2733981",
-        "contentTypeId": "12",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
-        "modifiedAt": "20250610101223"
-      }
-    },
-    {
-      "id": "tour-2753103",
-      "contentId": "2753103",
-      "contentTypeId": "12",
-      "name": "대림어린이공원",
-      "category": "야외 공원",
-      "region": "서울특별시 영등포구",
-      "address": "서울특별시 영등포구 대림로 106 (대림동)",
-      "phone": "영등포구청 정원도시과 02-2670-4091",
-      "latitude": 37.491122772,
-      "longitude": 126.9032244523,
-      "distanceKm": 3,
-      "indoorOutdoor": "outdoor",
-      "cost": "paid",
-      "ageBand": "3-12세",
-      "ageMin": 3,
-      "ageMax": 12,
-      "agePolicy": {
-        "admission": {
-          "minAge": 0,
-          "maxAge": null,
-          "label": "공식 연령 제한은 방문 전 확인 필요"
-        },
-        "facility": {
-          "minAge": 3,
-          "maxAge": 12,
-          "label": "나들이톡 권장 3-12세"
-        },
-        "discounts": []
-      },
-      "interests": [
-        "자연",
-        "산책",
-        "야외놀이"
-      ],
-      "image": "https://tong.visitkorea.or.kr/cms/resource/93/3399393_image2_1.JPG",
-      "imageCredit": "한국관광공사 TourAPI",
-      "rating": null,
-      "hours": "상시 개방",
-      "price": "요금 공식 사이트 확인",
-      "priceRange": {
-        "min": 0,
-        "max": 0,
-        "label": "요금 확인 필요"
-      },
-      "description": "대림어린이공원 공식 관광 정보입니다.",
-      "facilities": {
-        "parking": "가능",
-        "stroller": "없음",
-        "nursing": "공식 사이트 확인",
-        "food": "연중무휴"
-      },
-      "tips": [
-        "방문 전 운영시간 확인",
-        "휴무: 연중무휴",
-        "주차 정보 확인 가능"
-      ],
-      "crowd": "확인 필요",
-      "talkActive": 0,
-      "favoriteCount": 0,
-      "mapX": 40,
-      "mapY": 52,
-      "dataSource": {
-        "provider": "한국관광공사 TourAPI",
-        "url": "https://www.data.go.kr/data/15101578/openapi.do",
-        "homepage": "",
-        "contentId": "2753103",
-        "contentTypeId": "12",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
-        "modifiedAt": "20250306133844"
       }
     },
     {
@@ -357,7 +213,7 @@
         "homepage": "",
         "contentId": "1059479",
         "contentTypeId": "12",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
         "modifiedAt": "20251212091131"
       }
     },
@@ -429,7 +285,7 @@
         "homepage": "",
         "contentId": "126499",
         "contentTypeId": "12",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
         "modifiedAt": "20250718090000"
       }
     },
@@ -501,7 +357,7 @@
         "homepage": "",
         "contentId": "128622",
         "contentTypeId": "12",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
         "modifiedAt": "20251231104650"
       }
     },
@@ -573,8 +429,152 @@
         "homepage": "",
         "contentId": "127942",
         "contentTypeId": "12",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
         "modifiedAt": "20251224093703"
+      }
+    },
+    {
+      "id": "tour-126488",
+      "contentId": "126488",
+      "contentTypeId": "12",
+      "name": "삼청공원",
+      "category": "야외 공원",
+      "region": "서울특별시 종로구",
+      "address": "서울특별시 종로구 삼청로 156 (삼청동)",
+      "phone": "02-2148-2842",
+      "latitude": 37.5889267212,
+      "longitude": 126.982819993,
+      "distanceKm": 11.1,
+      "indoorOutdoor": "outdoor",
+      "cost": "paid",
+      "ageBand": "3-12세",
+      "ageMin": 3,
+      "ageMax": 12,
+      "agePolicy": {
+        "admission": {
+          "minAge": 0,
+          "maxAge": null,
+          "label": "공식 연령 제한은 방문 전 확인 필요"
+        },
+        "facility": {
+          "minAge": 3,
+          "maxAge": 12,
+          "label": "나들이톡 권장 3-12세"
+        },
+        "discounts": []
+      },
+      "interests": [
+        "자연",
+        "산책",
+        "야외놀이"
+      ],
+      "image": "https://tong.visitkorea.or.kr/cms/resource/72/3400072_image2_1.JPG",
+      "imageCredit": "한국관광공사 TourAPI",
+      "rating": null,
+      "hours": "상시 개방",
+      "price": "요금 공식 사이트 확인",
+      "priceRange": {
+        "min": 0,
+        "max": 0,
+        "label": "요금 확인 필요"
+      },
+      "description": "삼청공원 공식 관광 정보입니다.",
+      "facilities": {
+        "parking": "가능",
+        "stroller": "공식 사이트 확인",
+        "nursing": "공식 사이트 확인",
+        "food": "연중무휴"
+      },
+      "tips": [
+        "방문 전 운영시간 확인",
+        "휴무: 연중무휴",
+        "주차 정보 확인 가능"
+      ],
+      "crowd": "확인 필요",
+      "talkActive": 0,
+      "favoriteCount": 0,
+      "mapX": 51,
+      "mapY": 32,
+      "dataSource": {
+        "provider": "한국관광공사 TourAPI",
+        "url": "https://www.data.go.kr/data/15101578/openapi.do",
+        "homepage": "",
+        "contentId": "126488",
+        "contentTypeId": "12",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
+        "modifiedAt": "20251103152619"
+      }
+    },
+    {
+      "id": "tour-1906334",
+      "contentId": "1906334",
+      "contentTypeId": "12",
+      "name": "동대문역사문화공원",
+      "category": "어린이 박물관",
+      "region": "서울특별시 중구",
+      "address": "서울특별시 중구 을지로 281 (을지로7가)",
+      "phone": "02-2153-0000",
+      "latitude": 37.566107632,
+      "longitude": 127.0095709797,
+      "distanceKm": 11.5,
+      "indoorOutdoor": "outdoor",
+      "cost": "paid",
+      "ageBand": "6-12세",
+      "ageMin": 6,
+      "ageMax": 12,
+      "agePolicy": {
+        "admission": {
+          "minAge": 0,
+          "maxAge": null,
+          "label": "공식 연령 제한은 방문 전 확인 필요"
+        },
+        "facility": {
+          "minAge": 6,
+          "maxAge": 12,
+          "label": "나들이톡 권장 6-12세"
+        },
+        "discounts": []
+      },
+      "interests": [
+        "체험",
+        "관찰",
+        "역사"
+      ],
+      "image": "https://tong.visitkorea.or.kr/cms/resource/37/3566337_image2_1.jpg",
+      "imageCredit": "한국관광공사 TourAPI",
+      "rating": null,
+      "hours": "상시 개방",
+      "price": "요금 공식 사이트 확인",
+      "priceRange": {
+        "min": 0,
+        "max": 0,
+        "label": "요금 확인 필요"
+      },
+      "description": "동대문역사문화공원 공식 관광 정보입니다.",
+      "facilities": {
+        "parking": "가능",
+        "stroller": "공식 사이트 확인",
+        "nursing": "공식 사이트 확인",
+        "food": "연중무휴"
+      },
+      "tips": [
+        "방문 전 운영시간 확인",
+        "휴무: 연중무휴",
+        "주차 정보 확인 가능"
+      ],
+      "crowd": "확인 필요",
+      "talkActive": 0,
+      "favoriteCount": 0,
+      "mapX": 55,
+      "mapY": 37,
+      "dataSource": {
+        "provider": "한국관광공사 TourAPI",
+        "url": "https://www.data.go.kr/data/15101578/openapi.do",
+        "homepage": "",
+        "contentId": "1906334",
+        "contentTypeId": "12",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
+        "modifiedAt": "20251113135916"
       }
     },
     {
@@ -645,7 +645,7 @@
         "homepage": "",
         "contentId": "3012716",
         "contentTypeId": "14",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
         "modifiedAt": "20251023143000"
       }
     },
@@ -716,7 +716,7 @@
         "homepage": "",
         "contentId": "2752545",
         "contentTypeId": "12",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
         "modifiedAt": "20251223133624"
       }
     },
@@ -787,8 +787,80 @@
         "homepage": "",
         "contentId": "3442375",
         "contentTypeId": "12",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
         "modifiedAt": "20241226110512"
+      }
+    },
+    {
+      "id": "tour-753994",
+      "contentId": "753994",
+      "contentTypeId": "12",
+      "name": "살곶이체육공원",
+      "category": "야외 공원",
+      "region": "서울특별시 성동구",
+      "address": "서울특별시 성동구 중랑천서자전거길 209 (사근동)",
+      "phone": "02-2286-6090",
+      "latitude": 37.5540292149,
+      "longitude": 127.0504648193,
+      "distanceKm": 14.3,
+      "indoorOutdoor": "outdoor",
+      "cost": "paid",
+      "ageBand": "3-12세",
+      "ageMin": 3,
+      "ageMax": 12,
+      "agePolicy": {
+        "admission": {
+          "minAge": 0,
+          "maxAge": null,
+          "label": "공식 연령 제한은 방문 전 확인 필요"
+        },
+        "facility": {
+          "minAge": 3,
+          "maxAge": 12,
+          "label": "나들이톡 권장 3-12세"
+        },
+        "discounts": []
+      },
+      "interests": [
+        "자연",
+        "산책",
+        "야외놀이"
+      ],
+      "image": "https://tong.visitkorea.or.kr/cms/resource/42/3564942_image2_1.jpg",
+      "imageCredit": "한국관광공사 TourAPI",
+      "rating": null,
+      "hours": "상시 개방",
+      "price": "요금 공식 사이트 확인",
+      "priceRange": {
+        "min": 0,
+        "max": 0,
+        "label": "요금 확인 필요"
+      },
+      "description": "살곶이체육공원 공식 관광 정보입니다.",
+      "facilities": {
+        "parking": "가능",
+        "stroller": "공식 사이트 확인",
+        "nursing": "공식 사이트 확인",
+        "food": "연중무휴"
+      },
+      "tips": [
+        "방문 전 운영시간 확인",
+        "휴무: 연중무휴",
+        "주차 정보 확인 가능"
+      ],
+      "crowd": "확인 필요",
+      "talkActive": 0,
+      "favoriteCount": 0,
+      "mapX": 60,
+      "mapY": 39,
+      "dataSource": {
+        "provider": "한국관광공사 TourAPI",
+        "url": "https://www.data.go.kr/data/15101578/openapi.do",
+        "homepage": "",
+        "contentId": "753994",
+        "contentTypeId": "12",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
+        "modifiedAt": "20251118154204"
       }
     },
     {
@@ -858,8 +930,151 @@
         "homepage": "",
         "contentId": "3080852",
         "contentTypeId": "14",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
         "modifiedAt": "20251103113539"
+      }
+    },
+    {
+      "id": "tour-3081985",
+      "contentId": "3081985",
+      "contentTypeId": "12",
+      "name": "청담도로공원",
+      "category": "야외 공원",
+      "region": "서울특별시 강남구",
+      "address": "서울특별시 강남구 삼성동 80",
+      "phone": "확인 필요",
+      "latitude": 37.52069442,
+      "longitude": 127.0628118632,
+      "distanceKm": 14.8,
+      "indoorOutdoor": "outdoor",
+      "cost": "paid",
+      "ageBand": "3-12세",
+      "ageMin": 3,
+      "ageMax": 12,
+      "agePolicy": {
+        "admission": {
+          "minAge": 0,
+          "maxAge": null,
+          "label": "공식 연령 제한은 방문 전 확인 필요"
+        },
+        "facility": {
+          "minAge": 3,
+          "maxAge": 12,
+          "label": "나들이톡 권장 3-12세"
+        },
+        "discounts": []
+      },
+      "interests": [
+        "자연",
+        "산책",
+        "야외놀이"
+      ],
+      "image": "https://tong.visitkorea.or.kr/cms/resource/79/3081979_image2_1.jpg",
+      "imageCredit": "한국관광공사 TourAPI",
+      "rating": null,
+      "hours": "운영 시간 공식 사이트 확인",
+      "price": "요금 공식 사이트 확인",
+      "priceRange": {
+        "min": 0,
+        "max": 0,
+        "label": "요금 확인 필요"
+      },
+      "description": "청담도로공원 공식 관광 정보입니다.",
+      "facilities": {
+        "parking": "있음",
+        "stroller": "공식 사이트 확인",
+        "nursing": "공식 사이트 확인",
+        "food": "공식 사이트 확인"
+      },
+      "tips": [
+        "방문 전 운영시간 확인",
+        "주차 정보 확인 가능"
+      ],
+      "crowd": "확인 필요",
+      "talkActive": 0,
+      "favoriteCount": 0,
+      "mapX": 62,
+      "mapY": 46,
+      "dataSource": {
+        "provider": "한국관광공사 TourAPI",
+        "url": "https://www.data.go.kr/data/15101578/openapi.do",
+        "homepage": "",
+        "contentId": "3081985",
+        "contentTypeId": "12",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
+        "modifiedAt": "20251031133712"
+      }
+    },
+    {
+      "id": "tour-1030763",
+      "contentId": "1030763",
+      "contentTypeId": "12",
+      "name": "뚝섬한강공원",
+      "category": "야외 공원",
+      "region": "서울특별시 광진구",
+      "address": "서울특별시 광진구 강변북로 2273 (자양동)",
+      "phone": "02-3780-0521~4",
+      "latitude": 37.5294186076,
+      "longitude": 127.0739939307,
+      "distanceKm": 15.9,
+      "indoorOutdoor": "outdoor",
+      "cost": "paid",
+      "ageBand": "3-12세",
+      "ageMin": 3,
+      "ageMax": 12,
+      "agePolicy": {
+        "admission": {
+          "minAge": 0,
+          "maxAge": null,
+          "label": "공식 연령 제한은 방문 전 확인 필요"
+        },
+        "facility": {
+          "minAge": 3,
+          "maxAge": 12,
+          "label": "나들이톡 권장 3-12세"
+        },
+        "discounts": []
+      },
+      "interests": [
+        "자연",
+        "산책",
+        "야외놀이"
+      ],
+      "image": "https://tong.visitkorea.or.kr/cms/resource/61/3534561_image2_1.jpg",
+      "imageCredit": "한국관광공사 TourAPI",
+      "rating": null,
+      "hours": "상시 개방",
+      "price": "요금 공식 사이트 확인",
+      "priceRange": {
+        "min": 0,
+        "max": 0,
+        "label": "요금 확인 필요"
+      },
+      "description": "뚝섬한강공원 공식 관광 정보입니다.",
+      "facilities": {
+        "parking": "가능 (674대)",
+        "stroller": "공식 사이트 확인",
+        "nursing": "공식 사이트 확인",
+        "food": "연중무휴"
+      },
+      "tips": [
+        "방문 전 운영시간 확인",
+        "휴무: 연중무휴",
+        "주차 정보 확인 가능"
+      ],
+      "crowd": "확인 필요",
+      "talkActive": 0,
+      "favoriteCount": 0,
+      "mapX": 63,
+      "mapY": 44,
+      "dataSource": {
+        "provider": "한국관광공사 TourAPI",
+        "url": "https://www.data.go.kr/data/15101578/openapi.do",
+        "homepage": "",
+        "contentId": "1030763",
+        "contentTypeId": "12",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
+        "modifiedAt": "20251114153013"
       }
     },
     {
@@ -931,80 +1146,8 @@
         "homepage": "",
         "contentId": "2747797",
         "contentTypeId": "12",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
         "modifiedAt": "20250730133742"
-      }
-    },
-    {
-      "id": "tour-753850",
-      "contentId": "753850",
-      "contentTypeId": "12",
-      "name": "키즈오토파크",
-      "category": "가족 나들이",
-      "region": "서울특별시 광진구",
-      "address": "서울특별시 광진구 능동로 216",
-      "phone": "02-455-7119",
-      "latitude": 37.5493607781,
-      "longitude": 127.0762931559,
-      "distanceKm": 16.4,
-      "indoorOutdoor": "indoor",
-      "cost": "paid",
-      "ageBand": "6-12세",
-      "ageMin": 6,
-      "ageMax": 12,
-      "agePolicy": {
-        "admission": {
-          "minAge": 0,
-          "maxAge": null,
-          "label": "공식 연령 제한은 방문 전 확인 필요"
-        },
-        "facility": {
-          "minAge": 6,
-          "maxAge": 12,
-          "label": "나들이톡 권장 6-12세"
-        },
-        "discounts": []
-      },
-      "interests": [
-        "체험",
-        "휴식",
-        "관찰"
-      ],
-      "image": "https://tong.visitkorea.or.kr/cms/resource/03/3567303_image2_1.jpg",
-      "imageCredit": "한국관광공사 TourAPI",
-      "rating": null,
-      "hours": "10:30~15:30 ※ 홈페이지 사전예약 필수",
-      "price": "요금 공식 사이트 확인",
-      "priceRange": {
-        "min": 0,
-        "max": 0,
-        "label": "요금 확인 필요"
-      },
-      "description": "키즈오토파크 공식 관광 정보입니다.",
-      "facilities": {
-        "parking": "가능",
-        "stroller": "공식 사이트 확인",
-        "nursing": "공식 사이트 확인",
-        "food": "매주 월요일 / 공휴일"
-      },
-      "tips": [
-        "방문 전 운영시간 확인",
-        "휴무: 매주 월요일 / 공휴일",
-        "주차 정보 확인 가능"
-      ],
-      "crowd": "확인 필요",
-      "talkActive": 0,
-      "favoriteCount": 0,
-      "mapX": 64,
-      "mapY": 40,
-      "dataSource": {
-        "provider": "한국관광공사 TourAPI",
-        "url": "https://www.data.go.kr/data/15101578/openapi.do",
-        "homepage": "",
-        "contentId": "753850",
-        "contentTypeId": "12",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
-        "modifiedAt": "20251117095534"
       }
     },
     {
@@ -1075,8 +1218,80 @@
         "homepage": "",
         "contentId": "1602451",
         "contentTypeId": "12",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
         "modifiedAt": "20251230171206"
+      }
+    },
+    {
+      "id": "tour-1115299",
+      "contentId": "1115299",
+      "contentTypeId": "12",
+      "name": "봉화산근린공원",
+      "category": "야외 공원",
+      "region": "서울특별시 중랑구",
+      "address": "서울특별시 중랑구 봉화산로45길 (묵동)",
+      "phone": "중랑구 공원녹지과 02-2094-2357",
+      "latitude": 37.610609504,
+      "longitude": 127.0922455148,
+      "distanceKm": 20.3,
+      "indoorOutdoor": "outdoor",
+      "cost": "paid",
+      "ageBand": "3-12세",
+      "ageMin": 3,
+      "ageMax": 12,
+      "agePolicy": {
+        "admission": {
+          "minAge": 0,
+          "maxAge": null,
+          "label": "공식 연령 제한은 방문 전 확인 필요"
+        },
+        "facility": {
+          "minAge": 3,
+          "maxAge": 12,
+          "label": "나들이톡 권장 3-12세"
+        },
+        "discounts": []
+      },
+      "interests": [
+        "자연",
+        "산책",
+        "야외놀이"
+      ],
+      "image": "https://tong.visitkorea.or.kr/cms/resource/96/3568496_image2_1.jpg",
+      "imageCredit": "한국관광공사 TourAPI",
+      "rating": null,
+      "hours": "상시 개방",
+      "price": "요금 공식 사이트 확인",
+      "priceRange": {
+        "min": 0,
+        "max": 0,
+        "label": "요금 확인 필요"
+      },
+      "description": "봉화산근린공원 공식 관광 정보입니다.",
+      "facilities": {
+        "parking": "가능",
+        "stroller": "공식 사이트 확인",
+        "nursing": "공식 사이트 확인",
+        "food": "연중무휴"
+      },
+      "tips": [
+        "방문 전 운영시간 확인",
+        "휴무: 연중무휴",
+        "주차 정보 확인 가능"
+      ],
+      "crowd": "확인 필요",
+      "talkActive": 0,
+      "favoriteCount": 0,
+      "mapX": 66,
+      "mapY": 28,
+      "dataSource": {
+        "provider": "한국관광공사 TourAPI",
+        "url": "https://www.data.go.kr/data/15101578/openapi.do",
+        "homepage": "",
+        "contentId": "1115299",
+        "contentTypeId": "12",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
+        "modifiedAt": "20251201164435"
       }
     },
     {
@@ -1146,8 +1361,80 @@
         "homepage": "",
         "contentId": "3447439",
         "contentTypeId": "12",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
         "modifiedAt": "20250730084427"
+      }
+    },
+    {
+      "id": "tour-2746200",
+      "contentId": "2746200",
+      "contentTypeId": "12",
+      "name": "미사한강공원4호",
+      "category": "야외 공원",
+      "region": "경기도 하남시",
+      "address": "경기도 하남시 미사강변한강로 111 (선동)",
+      "phone": "하남시 공원녹지과 031-790-5145",
+      "latitude": 37.5779011557,
+      "longitude": 127.188507127,
+      "distanceKm": 26.8,
+      "indoorOutdoor": "outdoor",
+      "cost": "paid",
+      "ageBand": "3-12세",
+      "ageMin": 3,
+      "ageMax": 12,
+      "agePolicy": {
+        "admission": {
+          "minAge": 0,
+          "maxAge": null,
+          "label": "공식 연령 제한은 방문 전 확인 필요"
+        },
+        "facility": {
+          "minAge": 3,
+          "maxAge": 12,
+          "label": "나들이톡 권장 3-12세"
+        },
+        "discounts": []
+      },
+      "interests": [
+        "자연",
+        "산책",
+        "야외놀이"
+      ],
+      "image": "https://tong.visitkorea.or.kr/cms/resource/17/3566817_image2_1.jpg",
+      "imageCredit": "한국관광공사 TourAPI",
+      "rating": null,
+      "hours": "상시 개방",
+      "price": "요금 공식 사이트 확인",
+      "priceRange": {
+        "min": 0,
+        "max": 0,
+        "label": "요금 확인 필요"
+      },
+      "description": "미사한강공원4호 공식 관광 정보입니다.",
+      "facilities": {
+        "parking": "가능",
+        "stroller": "공식 사이트 확인",
+        "nursing": "공식 사이트 확인",
+        "food": "연중무휴"
+      },
+      "tips": [
+        "방문 전 운영시간 확인",
+        "휴무: 연중무휴",
+        "주차 정보 확인 가능"
+      ],
+      "crowd": "확인 필요",
+      "talkActive": 0,
+      "favoriteCount": 0,
+      "mapX": 78,
+      "mapY": 34,
+      "dataSource": {
+        "provider": "한국관광공사 TourAPI",
+        "url": "https://www.data.go.kr/data/15101578/openapi.do",
+        "homepage": "",
+        "contentId": "2746200",
+        "contentTypeId": "12",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
+        "modifiedAt": "20251128112107"
       }
     },
     {
@@ -1218,8 +1505,80 @@
         "homepage": "",
         "contentId": "982142",
         "contentTypeId": "12",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
         "modifiedAt": "20250321175935"
+      }
+    },
+    {
+      "id": "tour-126618",
+      "contentId": "126618",
+      "contentTypeId": "12",
+      "name": "인계예술공원",
+      "category": "예술 체험",
+      "region": "경기도 수원시",
+      "address": "경기도 수원시 팔달구 동수원로 335",
+      "phone": "031-228-2114",
+      "latitude": 37.2586104401,
+      "longitude": 127.0359939011,
+      "distanceKm": 31.4,
+      "indoorOutdoor": "outdoor",
+      "cost": "paid",
+      "ageBand": "3-12세",
+      "ageMin": 3,
+      "ageMax": 12,
+      "agePolicy": {
+        "admission": {
+          "minAge": 0,
+          "maxAge": null,
+          "label": "공식 연령 제한은 방문 전 확인 필요"
+        },
+        "facility": {
+          "minAge": 3,
+          "maxAge": 12,
+          "label": "나들이톡 권장 3-12세"
+        },
+        "discounts": []
+      },
+      "interests": [
+        "미술",
+        "체험",
+        "관찰"
+      ],
+      "image": "https://tong.visitkorea.or.kr/cms/resource/79/3400879_image2_1.JPG",
+      "imageCredit": "한국관광공사 TourAPI",
+      "rating": null,
+      "hours": "상시 개방",
+      "price": "요금 공식 사이트 확인",
+      "priceRange": {
+        "min": 0,
+        "max": 0,
+        "label": "요금 확인 필요"
+      },
+      "description": "인계예술공원 공식 관광 정보입니다.",
+      "facilities": {
+        "parking": "가능",
+        "stroller": "공식 사이트 확인",
+        "nursing": "공식 사이트 확인",
+        "food": "연중무휴"
+      },
+      "tips": [
+        "방문 전 운영시간 확인",
+        "휴무: 연중무휴",
+        "주차 정보 확인 가능"
+      ],
+      "crowd": "확인 필요",
+      "talkActive": 0,
+      "favoriteCount": 0,
+      "mapX": 58,
+      "mapY": 98,
+      "dataSource": {
+        "provider": "한국관광공사 TourAPI",
+        "url": "https://www.data.go.kr/data/15101578/openapi.do",
+        "homepage": "",
+        "contentId": "126618",
+        "contentTypeId": "12",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
+        "modifiedAt": "20251224103337"
       }
     },
     {
@@ -1290,7 +1649,7 @@
         "homepage": "",
         "contentId": "130570",
         "contentTypeId": "14",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
         "modifiedAt": "20250731164724"
       }
     },
@@ -1361,80 +1720,8 @@
         "homepage": "",
         "contentId": "3455504",
         "contentTypeId": "12",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
         "modifiedAt": "20241222223619"
-      }
-    },
-    {
-      "id": "tour-128599",
-      "contentId": "128599",
-      "contentTypeId": "12",
-      "name": "선감어촌체험마을",
-      "category": "가족 나들이",
-      "region": "경기도 안산시",
-      "address": "경기도 안산시 단원구 개건너길 78 (선감동)",
-      "phone": "032-886-6133",
-      "latitude": 37.2205604384,
-      "longitude": 126.6298901758,
-      "distanceKm": 40.4,
-      "indoorOutdoor": "indoor",
-      "cost": "paid",
-      "ageBand": "4-10세",
-      "ageMin": 4,
-      "ageMax": 10,
-      "agePolicy": {
-        "admission": {
-          "minAge": 0,
-          "maxAge": null,
-          "label": "공식 연령 제한은 방문 전 확인 필요"
-        },
-        "facility": {
-          "minAge": 4,
-          "maxAge": 10,
-          "label": "나들이톡 권장 4-10세"
-        },
-        "discounts": []
-      },
-      "interests": [
-        "체험",
-        "휴식",
-        "관찰"
-      ],
-      "image": "https://tong.visitkorea.or.kr/cms/resource/34/3345134_image2_1.jpg",
-      "imageCredit": "한국관광공사 TourAPI",
-      "rating": null,
-      "hours": "09:00~17:00",
-      "price": "요금 공식 사이트 확인",
-      "priceRange": {
-        "min": 0,
-        "max": 0,
-        "label": "요금 확인 필요"
-      },
-      "description": "선감어촌체험마을 공식 관광 정보입니다.",
-      "facilities": {
-        "parking": "가능",
-        "stroller": "없음",
-        "nursing": "공식 사이트 확인",
-        "food": "연중무휴"
-      },
-      "tips": [
-        "방문 전 운영시간 확인",
-        "휴무: 연중무휴",
-        "주차 정보 확인 가능"
-      ],
-      "crowd": "확인 필요",
-      "talkActive": 0,
-      "favoriteCount": 0,
-      "mapX": 4,
-      "mapY": 100,
-      "dataSource": {
-        "provider": "한국관광공사 TourAPI",
-        "url": "https://www.data.go.kr/data/15101578/openapi.do",
-        "homepage": "",
-        "contentId": "128599",
-        "contentTypeId": "12",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
-        "modifiedAt": "20250319094850"
       }
     },
     {
@@ -1505,7 +1792,7 @@
         "homepage": "",
         "contentId": "129018",
         "contentTypeId": "12",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
         "modifiedAt": "20250905131417"
       }
     },
@@ -1575,7 +1862,7 @@
         "homepage": "",
         "contentId": "2738718",
         "contentTypeId": "28",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
         "modifiedAt": "20250513155541"
       }
     },
@@ -1647,7 +1934,7 @@
         "homepage": "",
         "contentId": "2732148",
         "contentTypeId": "14",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
         "modifiedAt": "20250108142426"
       }
     },
@@ -1717,80 +2004,8 @@
         "homepage": "",
         "contentId": "2961651",
         "contentTypeId": "25",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
         "modifiedAt": "20230510193522"
-      }
-    },
-    {
-      "id": "tour-128601",
-      "contentId": "128601",
-      "contentTypeId": "12",
-      "name": "큰무리어촌체험마을",
-      "category": "가족 나들이",
-      "region": "인천광역시 영종구",
-      "address": "인천광역시 영종구 대무의로 26-9 (무의동)",
-      "phone": "032-751-0310",
-      "latitude": 37.4092736399,
-      "longitude": 126.4135102749,
-      "distanceKm": 44.1,
-      "indoorOutdoor": "indoor",
-      "cost": "paid",
-      "ageBand": "4-10세",
-      "ageMin": 4,
-      "ageMax": 10,
-      "agePolicy": {
-        "admission": {
-          "minAge": 0,
-          "maxAge": null,
-          "label": "공식 연령 제한은 방문 전 확인 필요"
-        },
-        "facility": {
-          "minAge": 4,
-          "maxAge": 10,
-          "label": "나들이톡 권장 4-10세"
-        },
-        "discounts": []
-      },
-      "interests": [
-        "체험",
-        "휴식",
-        "관찰"
-      ],
-      "image": "https://tong.visitkorea.or.kr/cms/resource/56/3047256_image2_1.jpg",
-      "imageCredit": "한국관광공사 TourAPI",
-      "rating": null,
-      "hours": "상시 개방",
-      "price": "요금 공식 사이트 확인",
-      "priceRange": {
-        "min": 0,
-        "max": 0,
-        "label": "요금 확인 필요"
-      },
-      "description": "큰무리어촌체험마을 공식 관광 정보입니다.",
-      "facilities": {
-        "parking": "가능 요금 (무료)",
-        "stroller": "없음",
-        "nursing": "공식 사이트 확인",
-        "food": "연중무휴"
-      },
-      "tips": [
-        "방문 전 운영시간 확인",
-        "휴무: 연중무휴",
-        "주차 정보 확인 가능"
-      ],
-      "crowd": "확인 필요",
-      "talkActive": 0,
-      "favoriteCount": 0,
-      "mapX": 0,
-      "mapY": 68,
-      "dataSource": {
-        "provider": "한국관광공사 TourAPI",
-        "url": "https://www.data.go.kr/data/15101578/openapi.do",
-        "homepage": "",
-        "contentId": "128601",
-        "contentTypeId": "12",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
-        "modifiedAt": "20260630184428"
       }
     },
     {
@@ -1861,7 +2076,7 @@
         "homepage": "",
         "contentId": "2737291",
         "contentTypeId": "12",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
         "modifiedAt": "20250923171740"
       }
     },
@@ -1933,7 +2148,7 @@
         "homepage": "",
         "contentId": "129410",
         "contentTypeId": "12",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
         "modifiedAt": "20251030103514"
       }
     },
@@ -2003,22 +2218,22 @@
         "homepage": "",
         "contentId": "2755756",
         "contentTypeId": "28",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
         "modifiedAt": "20251106143231"
       }
     },
     {
-      "id": "tour-128916",
-      "contentId": "128916",
-      "contentTypeId": "12",
-      "name": "화성 궁평어촌체험휴양마을",
+      "id": "tour-2604100",
+      "contentId": "2604100",
+      "contentTypeId": "32",
+      "name": "예직한옥체험마을(용인예직한옥체험 마을)",
       "category": "가족 나들이",
-      "region": "경기도 화성시",
-      "address": "경기도 화성시 서신면 궁평항로 1069-11",
-      "phone": "031-356-7339",
-      "latitude": 37.1162095733,
-      "longitude": 126.6833853938,
-      "distanceKm": 48.3,
+      "region": "경기도 용인시",
+      "address": "경기도 용인시 처인구 예직로 24-28 (호동)",
+      "phone": "확인 필요",
+      "latitude": 37.1918221048,
+      "longitude": 127.2555842092,
+      "distanceKm": 48.2,
       "indoorOutdoor": "indoor",
       "cost": "paid",
       "ageBand": "4-10세",
@@ -2042,113 +2257,39 @@
         "휴식",
         "관찰"
       ],
-      "image": "https://tong.visitkorea.or.kr/cms/resource/29/3031629_image2_1.JPG",
-      "imageCredit": "한국관광공사 TourAPI",
+      "image": "assets/place-museum.webp",
+      "imageCredit": "나들이톡 기본 이미지",
       "rating": null,
-      "hours": "상시 개방 ※ 체험별 이용시간은 상이하므로 방문 전 문의 요망",
+      "hours": "운영 시간 공식 사이트 확인",
       "price": "요금 공식 사이트 확인",
       "priceRange": {
         "min": 0,
         "max": 0,
         "label": "요금 확인 필요"
       },
-      "description": "화성 궁평어촌체험휴양마을 공식 관광 정보입니다.",
+      "description": "예직한옥체험마을(용인예직한옥체험 마을) 공식 관광 정보입니다.",
       "facilities": {
-        "parking": "가능",
+        "parking": "공식 사이트 확인",
         "stroller": "공식 사이트 확인",
         "nursing": "공식 사이트 확인",
-        "food": "연중무휴"
+        "food": "공식 사이트 확인"
       },
       "tips": [
-        "방문 전 운영시간 확인",
-        "휴무: 연중무휴",
-        "주차 정보 확인 가능"
+        "방문 전 운영시간 확인"
       ],
       "crowd": "확인 필요",
       "talkActive": 0,
       "favoriteCount": 0,
-      "mapX": 11,
+      "mapX": 87,
       "mapY": 100,
       "dataSource": {
         "provider": "한국관광공사 TourAPI",
         "url": "https://www.data.go.kr/data/15101578/openapi.do",
         "homepage": "",
-        "contentId": "128916",
-        "contentTypeId": "12",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
-        "modifiedAt": "20251023143000"
-      }
-    },
-    {
-      "id": "tour-2599177",
-      "contentId": "2599177",
-      "contentTypeId": "12",
-      "name": "강화도령 화문석 체험장",
-      "category": "가족 나들이",
-      "region": "인천광역시 강화군",
-      "address": "인천광역시 강화군 송해면 강화대로 891",
-      "phone": "032-934-6858~9",
-      "latitude": 37.7678991029,
-      "longitude": 126.4457501762,
-      "distanceKm": 48.4,
-      "indoorOutdoor": "indoor",
-      "cost": "paid",
-      "ageBand": "4-10세",
-      "ageMin": 4,
-      "ageMax": 10,
-      "agePolicy": {
-        "admission": {
-          "minAge": 0,
-          "maxAge": null,
-          "label": "공식 연령 제한은 방문 전 확인 필요"
-        },
-        "facility": {
-          "minAge": 4,
-          "maxAge": 10,
-          "label": "나들이톡 권장 4-10세"
-        },
-        "discounts": []
-      },
-      "interests": [
-        "체험",
-        "휴식",
-        "관찰"
-      ],
-      "image": "https://tong.visitkorea.or.kr/cms/resource/55/3499155_image2_1.jpg",
-      "imageCredit": "한국관광공사 TourAPI",
-      "rating": null,
-      "hours": "09:00~17:30 (휴게시간 12:00~13:00)",
-      "price": "요금 공식 사이트 확인",
-      "priceRange": {
-        "min": 0,
-        "max": 0,
-        "label": "요금 확인 필요"
-      },
-      "description": "강화도령 화문석 체험장 공식 관광 정보입니다.",
-      "facilities": {
-        "parking": "가능",
-        "stroller": "없음",
-        "nursing": "공식 사이트 확인",
-        "food": "매주 일요일"
-      },
-      "tips": [
-        "방문 전 운영시간 확인",
-        "휴무: 매주 일요일",
-        "주차 정보 확인 가능"
-      ],
-      "crowd": "확인 필요",
-      "talkActive": 0,
-      "favoriteCount": 0,
-      "mapX": 0,
-      "mapY": 0,
-      "dataSource": {
-        "provider": "한국관광공사 TourAPI",
-        "url": "https://www.data.go.kr/data/15101578/openapi.do",
-        "homepage": "",
-        "contentId": "2599177",
-        "contentTypeId": "12",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
-        "modifiedAt": "20250708110920"
+        "contentId": "2604100",
+        "contentTypeId": "32",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
+        "modifiedAt": "20241127114936"
       }
     },
     {
@@ -2217,80 +2358,8 @@
         "homepage": "",
         "contentId": "2733099",
         "contentTypeId": "12",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
         "modifiedAt": "20250827181914"
-      }
-    },
-    {
-      "id": "tour-1553067",
-      "contentId": "1553067",
-      "contentTypeId": "12",
-      "name": "푸르내마을 [농촌체험]",
-      "category": "가족 나들이",
-      "region": "경기도 연천군",
-      "address": "경기도 연천군 청산면 청연로 30-62",
-      "phone": "031-833-5299",
-      "latitude": 38.0347797888,
-      "longitude": 127.1067014108,
-      "distanceKm": 60.5,
-      "indoorOutdoor": "indoor",
-      "cost": "paid",
-      "ageBand": "4-10세",
-      "ageMin": 4,
-      "ageMax": 10,
-      "agePolicy": {
-        "admission": {
-          "minAge": 0,
-          "maxAge": null,
-          "label": "공식 연령 제한은 방문 전 확인 필요"
-        },
-        "facility": {
-          "minAge": 4,
-          "maxAge": 10,
-          "label": "나들이톡 권장 4-10세"
-        },
-        "discounts": []
-      },
-      "interests": [
-        "체험",
-        "휴식",
-        "관찰"
-      ],
-      "image": "https://tong.visitkorea.or.kr/cms/resource/22/2566722_image2_1.jpg",
-      "imageCredit": "한국관광공사 TourAPI",
-      "rating": null,
-      "hours": "푸르내마을 고객센터 09:00~18:00",
-      "price": "요금 공식 사이트 확인",
-      "priceRange": {
-        "min": 0,
-        "max": 0,
-        "label": "요금 확인 필요"
-      },
-      "description": "푸르내마을 [농촌체험] 공식 관광 정보입니다.",
-      "facilities": {
-        "parking": "가능",
-        "stroller": "없음",
-        "nursing": "공식 사이트 확인",
-        "food": "연중무휴"
-      },
-      "tips": [
-        "방문 전 운영시간 확인",
-        "휴무: 연중무휴",
-        "주차 정보 확인 가능"
-      ],
-      "crowd": "확인 필요",
-      "talkActive": 0,
-      "favoriteCount": 0,
-      "mapX": 68,
-      "mapY": 0,
-      "dataSource": {
-        "provider": "한국관광공사 TourAPI",
-        "url": "https://www.data.go.kr/data/15101578/openapi.do",
-        "homepage": "",
-        "contentId": "1553067",
-        "contentTypeId": "12",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
-        "modifiedAt": "20250319165707"
       }
     },
     {
@@ -2361,78 +2430,8 @@
         "homepage": "",
         "contentId": "127613",
         "contentTypeId": "12",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
         "modifiedAt": "20250320094339"
-      }
-    },
-    {
-      "id": "tour-3532768",
-      "contentId": "3532768",
-      "contentTypeId": "32",
-      "name": "미가쉴가족펜션",
-      "category": "가족 나들이",
-      "region": "경기도 가평군",
-      "address": "경기도 가평군 가평읍 북한강변로 1007-50",
-      "phone": "확인 필요",
-      "latitude": 37.8029949945,
-      "longitude": 127.5228646144,
-      "distanceKm": 63.8,
-      "indoorOutdoor": "indoor",
-      "cost": "paid",
-      "ageBand": "3-12세",
-      "ageMin": 3,
-      "ageMax": 12,
-      "agePolicy": {
-        "admission": {
-          "minAge": 0,
-          "maxAge": null,
-          "label": "공식 연령 제한은 방문 전 확인 필요"
-        },
-        "facility": {
-          "minAge": 3,
-          "maxAge": 12,
-          "label": "나들이톡 권장 3-12세"
-        },
-        "discounts": []
-      },
-      "interests": [
-        "체험",
-        "휴식",
-        "관찰"
-      ],
-      "image": "assets/place-museum.webp",
-      "imageCredit": "나들이톡 기본 이미지",
-      "rating": null,
-      "hours": "운영 시간 공식 사이트 확인",
-      "price": "요금 공식 사이트 확인",
-      "priceRange": {
-        "min": 0,
-        "max": 0,
-        "label": "요금 확인 필요"
-      },
-      "description": "미가쉴가족펜션 공식 관광 정보입니다.",
-      "facilities": {
-        "parking": "공식 사이트 확인",
-        "stroller": "공식 사이트 확인",
-        "nursing": "공식 사이트 확인",
-        "food": "공식 사이트 확인"
-      },
-      "tips": [
-        "방문 전 운영시간 확인"
-      ],
-      "crowd": "확인 필요",
-      "talkActive": 0,
-      "favoriteCount": 0,
-      "mapX": 100,
-      "mapY": 0,
-      "dataSource": {
-        "provider": "한국관광공사 TourAPI",
-        "url": "https://www.data.go.kr/data/15101578/openapi.do",
-        "homepage": "",
-        "contentId": "3532768",
-        "contentTypeId": "32",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
-        "modifiedAt": "20251023143000"
       }
     },
     {
@@ -2501,7 +2500,7 @@
         "homepage": "",
         "contentId": "2726664",
         "contentTypeId": "28",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
         "modifiedAt": "20250410104809"
       }
     },
@@ -2571,7 +2570,7 @@
         "homepage": "",
         "contentId": "2752054",
         "contentTypeId": "28",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
         "modifiedAt": "20250819092142"
       }
     },
@@ -2641,7 +2640,7 @@
         "homepage": "",
         "contentId": "2738781",
         "contentTypeId": "28",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
         "modifiedAt": "20250808102658"
       }
     },
@@ -2713,7 +2712,7 @@
         "homepage": "",
         "contentId": "2611568",
         "contentTypeId": "12",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
         "modifiedAt": "20251204152044"
       }
     },
@@ -2784,7 +2783,7 @@
         "homepage": "",
         "contentId": "3456754",
         "contentTypeId": "12",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
         "modifiedAt": "20241222193911"
       }
     },
@@ -2856,7 +2855,7 @@
         "homepage": "",
         "contentId": "2767868",
         "contentTypeId": "14",
-        "fetchedAt": "2026-11-01T22:31:20.297Z",
+        "fetchedAt": "2026-11-08T22:35:37.990Z",
         "modifiedAt": "20250327152652"
       }
     }
